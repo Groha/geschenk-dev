@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" href="./assets/img/favicon.ico">
+		<title>Home Page</title>
+		<script type="module" crossorigin="" src="./js/index.min.js?v=1756642288019"></script>
+		<link rel="stylesheet" crossorigin="" href="./css/index.min.css?v=1756642288019">
+	</head>
+	<body>
+		<div class="wrapper">
+			<header data-fls-header="" class="header">
+				<div class="header__container">
+					<a href="/">
+						<picture>
+							<picture>
+								<img alt="Logo" class="header__logo" src="./assets/img/logo.webp">
+							</picture>
+						</picture>
+					</a>
+					<div class="header__menu menu">
+						<button type="button" data-fls-menu="" class="menu__icon icon-menu">
+							<span></span>
+						</button>
+						<nav class="menu__body">
+							<ul class="menu__list">
+								<li class="menu__item">
+									<a href="#" class="menu__link">Каталог</a>
+								</li>
+								<li class="menu__item">
+									<a href="#" class="menu__link">Про нас</a>
+								</li>
+								<li class="menu__item">
+									<a href="#" class="menu__link">Блог</a>
+								</li>
+								<li class="menu__item">
+									<a href="#" class="menu__link">Контакты</a>
+								</li>
+								<li class="menu__item">
+									<a href="#" class="menu__link">Доставка | Оплата</a>
+								</li>
+							</ul>
+							<ul class="header__langlist">
+								<li class="header__langitem">
+									<a href="#" class="header__langlink">DE</a>
+								</li>
+								<li class="header__langitem">
+									<a href="#" class="header__langlink">UA</a>
+								</li>
+								<li class="header__langitem active">
+									<a href="#" class="header__langlink">RU</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+					<!--
+<fetch url="@components/layout/menu/menu.json">
+<each loop='item in response'>
+</each>
+</fetch>
+-->
+					<ul class="header__langlist">
+						<li class="header__langitem">
+							<a href="#" class="header__langlink">DE</a>
+						</li>
+						<li class="header__langitem">
+							<a href="#" class="header__langlink">UA</a>
+						</li>
+						<li class="header__langitem active">
+							<a href="#" class="header__langlink">RU</a>
+						</li>
+					</ul>
+				</div>
+			</header>
+			<main class="page page--home">
+				<section class="hero">
+					<div class="hero__container">
+						<h1 class="hero__title">
+							Alle Menschen sind frei
+							<br>
+							und gleich an Würde
+						</h1>
+						<p class="hero__description">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit.
+							<br>
+							Modi recusandae, aperiam consequatur eaque repellendus atque minima!
+						</p>
+						<a href="#" data-fls-button="" class="hero__button button">Выбрать подарок</a>
+					</div>
+					<picture>
+						<picture>
+							<source media="(max-width: 600px)" srcset="./assets/img/home/hero_bg-600.webp" type="image/webp">
+							<source media="(max-width: 1200px)" srcset="./assets/img/home/hero_bg-1200.webp" type="image/webp">
+							<img alt="" class="hero__bg" src="./assets/img/home/hero_bg.webp">
+						</picture>
+					</picture>
+				</section>
+			</main>
+			<footer data-fls-footer="" class="footer">
+				<div class="footer__container">
+					<div class="footer__body">
+						<div class="footer__info">
+							<picture>
+								<picture>
+									<img alt="Logo" class="footer__logo" src="./assets/img/logo.webp">
+								</picture>
+							</picture>
+							<div class="footer__text">
+								<p>
+									Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente architecto dicta, fugit vero cupiditate cumque hic odit perferendis.
+								</p>
+							</div>
+						</div>
+						<nav data-fls-spollers="479.98,max" class="spollers">
+							<details class="spollers__item">
+								<summary class="spollers__title">
+									<h5 class="nav__footer-title">Навигация</h5>
+								</summary>
+								<div class="spollers__body">
+									<ul class="nav__footer-list">
+										<li class="nav__footer-item">
+											<a href="#" class="nav__footer-link">Каталог</a>
+										</li>
+										<li class="nav__footer-item">
+											<a href="#" class="nav__footer-link">Про нас</a>
+										</li>
+										<li class="nav__footer-item">
+											<a href="#" class="nav__footer-link">Блог</a>
+										</li>
+										<li class="nav__footer-item">
+											<a href="#" class="nav__footer-link">Контакты</a>
+										</li>
+										<li class="nav__footer-item">
+											<a href="#" class="nav__footer-link">Доставка | Оплата</a>
+										</li>
+									</ul>
+								</div>
+							</details>
+						</nav>
+						<div data-fls-spollers="479.98,max" class="spollers">
+							<details class="spollers__item">
+								<summary class="spollers__title">
+									<h5 class="nav__footer-title">Помощь</h5>
+								</summary>
+								<div class="spollers__body">
+									<ul class="nav__footer-list">
+										<li class="nav__footer-item">
+											<a href="#" class="nav__footer-link">Условия использования</a>
+										</li>
+										<li class="nav__footer-item">
+											<a href="#" class="nav__footer-link">Политика конфиденциальности</a>
+										</li>
+										<li class="nav__footer-item">
+											<a href="#" class="nav__footer-link">Возврат и обмен</a>
+										</li>
+										<li class="nav__footer-item">
+											<a href="#" class="nav__footer-link">Вопросы и ответы</a>
+										</li>
+									</ul>
+								</div>
+							</details>
+						</div>
+					</div>
+					<div class="footer__copy">
+						<p class="footer__copy-text">
+							©
+							<span>2025</span>
+							Geschenk fur euch. Все права защищены.
+						</p>
+						<a href="https://grokholska.dev/" target="_blank" rel="noopener" class="footer__copy-link">
+							Розробка сайту:
+							<span>Grokholska</span>
+						</a>
+					</div>
+					<ul class="footer__socials socials">
+						<li class="socials__item">
+							<a href="#" class="socials__link --icon-instagram">instagram</a>
+						</li>
+						<li class="socials__item">
+							<a href="#" class="socials__link --icon-tiktok">tiktok</a>
+						</li>
+						<li class="socials__item">
+							<a href="#" class="socials__link --icon-threads">threads</a>
+						</li>
+						<li class="socials__item">
+							<a href="#" class="socials__link --icon-whatsapp">whatsapp</a>
+						</li>
+					</ul>
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>
