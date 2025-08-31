@@ -5,8 +5,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="shortcut icon" href="./assets/img/favicon.ico">
 		<title>Home Page</title>
-		<script type="module" crossorigin="" src="./js/index.min.js?v=1756654320754"></script>
-		<link rel="stylesheet" crossorigin="" href="./css/index.min.css?v=1756654320754">
+		<script type="module" crossorigin="" src="./js/index.min.js?v=1756659682674"></script>
+		<link rel="stylesheet" crossorigin="" href="./css/index.min.css?v=1756659682674">
 	</head>
 	<body>
 		<div class="wrapper">
@@ -92,7 +92,7 @@
 				</section>
 				<section class="popular">
 					<div class="popular__container">
-						<h2 class="popular__title">Популярные наборы</h2>
+						<h2 class="popular__title title">Популярные наборы</h2>
 						<div class="popular__cards">
 							<a href="#" class="popular__card card">
 								<picture class="card__image">
@@ -163,6 +163,54 @@
 						<a href="#" data-fls-button="" class="popular__button button">Посмотреть все</a>
 					</div>
 				</section>
+				<section class="faq">
+					<div class="faq__container">
+						<div class="faq__body">
+							<h2 class="faq__title title">Частые вопросы</h2>
+							<div data-fls-spollers="" class="faq__spollers spollers-faq spollers">
+								<details class="spollers-faq__item spollers__item">
+									<summary class="spollers-faq__title spollers__title">
+										<h4>Как оформить заказ?</h4>
+									</summary>
+									<div class="spollers-faq__body spollers__body">
+										<p>
+											Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni sint quos distinctio corrupti obcaecati neque illum id ut laboriosam. Consectetur illum aspernatur sed veniam? Repudiandae iusto dolores in pariatur consequuntur. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda, unde qui aperiam harum dicta laboriosam incidunt hic saepe aspernatur quaerat ullam illum doloremque sint excepturi, error blanditiis aliquid possimus reiciendis.
+										</p>
+									</div>
+								</details>
+								<details class="spollers-faq__item spollers__item">
+									<summary class="spollers-faq__title spollers__title">
+										<h4>Lorem ipsum dolor sit amet?</h4>
+									</summary>
+									<div class="spollers-faq__body spollers__body">
+										<p>
+											Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni sint quos distinctio corrupti obcaecati neque illum id ut laboriosam. Consectetur illum aspernatur sed veniam? Repudiandae iusto dolores in pariatur consequuntur. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda, unde qui aperiam harum dicta laboriosam incidunt hic saepe aspernatur quaerat ullam illum doloremque sint excepturi, error blanditiis aliquid possimus reiciendis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni sint quos distinctio corrupti obcaecati neque illum id ut laboriosam. Consectetur illum aspernatur sed veniam? Repudiandae iusto dolores in pariatur consequuntur. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda, unde qui aperiam harum dicta laboriosam incidunt hic saepe aspernatur quaerat ullam illum doloremque sint excepturi, error blanditiis aliquid possimus reiciendis.
+										</p>
+									</div>
+								</details>
+								<details class="spollers-faq__item spollers__item">
+									<summary class="spollers-faq__title spollers__title">
+										<h4>Luas suscipit ratione qui dolore recusandae?</h4>
+									</summary>
+									<div class="spollers-faq__body spollers__body">
+										<p>
+											Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni sint quos distinctio corrupti obcaecati neque illum id ut laboriosam. Consectetur illum aspernatur sed veniam? Repudiandae iusto dolores in pariatur consequuntur.
+										</p>
+									</div>
+								</details>
+							</div>
+						</div>
+						<!-- <form action="" class="faq__form"></form> -->
+						<form data-fls-form="ajax" data-fls-form-popup="popup" method="POST" action="/sendmail" class="faq__form form">
+							<h5 class="form__title">Залишились питання?</h5>
+							<input required type="text" name="form[text]" data-fls-form-errtext="Error" placeholder="Name" class="form__input input">
+							<input required type="phone" name="form[phone]" data-fls-form-errtext="Error" placeholder="Phone" class="form__input input">
+							<input required type="email" name="form[email]" data-fls-form-errtext="Error" placeholder="E-mail" class="form__input input">
+							<span class="form__info">*Натискаючи на кнопку, Ви даэте згоду на обробку Ваших персональних даних.</span>
+							<button type="submit" class="form__button button">Напишiть менi!</button>
+						</form>
+					</div>
+				</section>
 			</main>
 			<footer data-fls-footer="" class="footer">
 				<div class="footer__container">
@@ -184,7 +232,7 @@
 								<summary class="spollers__title">
 									<h5 class="nav__footer-title">Навигация</h5>
 								</summary>
-								<div class="spollers__body">
+								<div class="nav__footer-body spollers__body">
 									<ul class="nav__footer-list">
 										<li class="nav__footer-item">
 											<a href="#" class="nav__footer-link">Каталог</a>
