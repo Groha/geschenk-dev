@@ -646,6 +646,9 @@ body.light-theme {
   .footer__copy {
     font-size: 0.875rem;
   }
+  .nav__footer-title {
+    margin-bottom: 1.25rem;
+  }
   .popular__cards {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
