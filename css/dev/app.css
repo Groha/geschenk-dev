@@ -71,7 +71,7 @@ h6 {
 @font-face { 
 	font-family: "iconfont"; 
 	font-display: swap;
-	src: url("../assets/fonts/iconfont.woff2?647e48b8fd4ec9cfce00ace744480a39") format("woff2"); 
+	src: url("../assets/fonts/iconfont.woff2?59c283b91b5e538006367dea529ea621") format("woff2"); 
 } 
 [class*="--icon-"]::before{
 	font-family: iconfont; 
@@ -103,11 +103,8 @@ h6 {
 	[class*="--icon-arrow"]::before { 
 		content: "\f109"; 
 	} 
-	[class*="--icon-arrow-right-thin"]::before { 
-		content: "\f10a"; 
-	} 
 	[class*="--icon-arrow-thin"]::before { 
-		content: "\f10b"; 
+		content: "\f10a"; 
 	} 
 
 
