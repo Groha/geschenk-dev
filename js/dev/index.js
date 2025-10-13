@@ -1,4 +1,5 @@
 import { g as gotoBlock } from "./app.min.js";
+import "./slider.min.js";
 function formRating() {
   const ratings = document.querySelectorAll("[data-fls-rating]");
   if (ratings) {

@@ -4,15 +4,12 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="shortcut icon" href="./assets/img/favicon.ico">
-		<title>Product Page</title>
-		<script type="module" crossorigin="" src="./js/product.min.js?v=1760346220918"></script>
-		<link rel="modulepreload" crossorigin="" href="./js/app.min.js">
-		<link rel="modulepreload" crossorigin="" href="./js/slider.min.js">
-		<link rel="modulepreload" crossorigin="" href="./js/quantity.min.js">
+		<title>Cart</title>
+		<script type="module" crossorigin="" src="./js/app.min.js?v=1760346220918"></script>
+		<script type="module" crossorigin="" src="./js/quantity.min.js?v=1760346220918"></script>
 		<link rel="stylesheet" crossorigin="" href="./css/app.min.css?v=1760346220918">
-		<link rel="stylesheet" crossorigin="" href="./css/slider.min.css?v=1760346220918">
 		<link rel="stylesheet" crossorigin="" href="./css/quantity.min.css?v=1760346220918">
-		<link rel="stylesheet" crossorigin="" href="./css/product.min.css?v=1760346220918">
+		<link rel="stylesheet" crossorigin="" href="./css/cart.min.css?v=1760346220918">
 	</head>
 	<body>
 		<div class="wrapper">
@@ -84,145 +81,54 @@
 					</div>
 				</div>
 			</header>
-			<main class="page page--product">
-				<div class="breadcrumb">
-					<ul class="breadcrumb__container">
-						<li class="breadcrumb__item --icon-arrow-thin">
-							<a href="#" class="breadcrumb__link">Головна</a>
-						</li>
-						<li class="breadcrumb__item --icon-arrow-thin">
-							<a href="#" class="breadcrumb__link">Каталог</a>
-						</li>
-						<li class="breadcrumb__item">Юбилейный сюрприз</li>
-					</ul>
-				</div>
-				<section class="product">
-					<div class="product__container">
-						<div class="product__sliders" data-fls-dynamic=".product__main,767.98,3">
-							<div data-fls-slider="" class="product__slider swiper">
-								<div class="product__wrapper swiper-wrapper">
-									<div class="product__slide swiper-slide">
-										<picture>
-											<source media="(max-width: 600px)" srcset="./assets/img/home/hero_bg-600.webp" type="image/webp">
-											<source media="(max-width: 1200px)" srcset="./assets/img/home/hero_bg-1200.webp" type="image/webp">
-											<img alt="Image" src="./assets/img/home/hero_bg.webp">
-										</picture>
-									</div>
-									<div class="product__slide swiper-slide">
-										<picture>
-											<source media="(max-width: 600px)" srcset="./assets/img/home/card-600.webp" type="image/webp">
-											<img alt="Image" src="./assets/img/home/card.webp">
-										</picture>
-									</div>
-									<div class="product__slide swiper-slide">
-										<picture>
-											<source media="(max-width: 600px)" srcset="./assets/img/home/blog-600.webp" type="image/webp">
-											<source media="(max-width: 1200px)" srcset="./assets/img/home/blog-1200.webp" type="image/webp">
-											<img alt="Image" src="./assets/img/home/blog.webp">
-										</picture>
-									</div>
-									<div class="product__slide swiper-slide">
-										<picture>
-											<source media="(max-width: 600px)" srcset="./assets/img/home/author-600.webp" type="image/webp">
-											<img alt="Image" src="./assets/img/home/author.webp">
-										</picture>
-									</div>
-									<div class="product__slide swiper-slide">
-										<picture>
-											<source media="(max-width: 600px)" srcset="./assets/img/home/card-600.webp" type="image/webp">
-											<img alt="Image" src="./assets/img/home/card.webp">
-										</picture>
-									</div>
-									<div class="product__slide swiper-slide">
-										<picture>
-											<source media="(max-width: 600px)" srcset="./assets/img/home/blog-600.webp" type="image/webp">
-											<source media="(max-width: 1200px)" srcset="./assets/img/home/blog-1200.webp" type="image/webp">
-											<img alt="Image" src="./assets/img/home/blog.webp">
-										</picture>
-									</div>
+			<main class="page page--cart">
+				<section class="cart">
+					<div class="cart__container">
+						<h1 class="cart__title">Ваш кошик</h1>
+						<form class="cart__form">
+							<div class="cart__table table-cart">
+								<div class="table-cart__header header-table">
+									<span class="header-table__item header-table__name">Назва товару</span>
+									<span class="header-table__item header-table__qty">Количество</span>
+									<span class="header-table__item header-table__total">Сумма</span>
 								</div>
-							</div>
-							<div thumbsslider="" class="product-thumbs__slider swiper">
-								<div class="product-thumbs__wrapper swiper-wrapper">
-									<div class="product-thumbs__slide swiper-slide">
-										<picture>
-											<source media="(max-width: 600px)" srcset="./assets/img/home/hero_bg-600.webp" type="image/webp">
-											<source media="(max-width: 1200px)" srcset="./assets/img/home/hero_bg-1200.webp" type="image/webp">
-											<img alt="Image" src="./assets/img/home/hero_bg.webp">
-										</picture>
+								<div class="table-cart__body body-table">
+									<div class="body-table__item body-table__name">
+										<div class="body-table__image">
+											<picture>
+												<source media="(max-width: 600px)" srcset="./assets/img/home/card-600.webp" type="image/webp">
+												<img alt="Image" src="./assets/img/home/card.webp">
+											</picture>
+										</div>
+										<ul class="body-table__main main-body">
+											<li class="main-body__availability">В наличии</li>
+											<li class="main-body__name">
+												<h2>Юбилейный сюрприз</h2>
+											</li>
+											<li class="main-body__price">$ 55</li>
+										</ul>
 									</div>
-									<div class="product-thumbs__slide swiper-slide">
-										<picture>
-											<source media="(max-width: 600px)" srcset="./assets/img/home/card-600.webp" type="image/webp">
-											<img alt="Image" src="./assets/img/home/card.webp">
-										</picture>
-									</div>
-									<div class="product-thumbs__slide swiper-slide">
-										<picture>
-											<source media="(max-width: 600px)" srcset="./assets/img/home/blog-600.webp" type="image/webp">
-											<source media="(max-width: 1200px)" srcset="./assets/img/home/blog-1200.webp" type="image/webp">
-											<img alt="Image" src="./assets/img/home/blog.webp">
-										</picture>
-									</div>
-									<div class="product-thumbs__slide swiper-slide">
-										<picture>
-											<source media="(max-width: 600px)" srcset="./assets/img/home/author-600.webp" type="image/webp">
-											<img alt="Image" src="./assets/img/home/author.webp">
-										</picture>
-									</div>
-									<div class="product-thumbs__slide swiper-slide">
-										<picture>
-											<source media="(max-width: 600px)" srcset="./assets/img/home/card-600.webp" type="image/webp">
-											<img alt="Image" src="./assets/img/home/card.webp">
-										</picture>
-									</div>
-									<div class="product-thumbs__slide swiper-slide">
-										<picture>
-											<source media="(max-width: 600px)" srcset="./assets/img/home/blog-600.webp" type="image/webp">
-											<source media="(max-width: 1200px)" srcset="./assets/img/home/blog-1200.webp" type="image/webp">
-											<img alt="Image" src="./assets/img/home/blog.webp">
-										</picture>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="product__main">
-							<h1 class="product__title">Юбилейный сюрприз</h1>
-							<div class="product__description">
-								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-							</div>
-							<div class="product__footer">
-								<div class="product__price">$ 55</div>
-								<!-- <button data-fls-button type="button" class="product__button button">add to cart</button> -->
-								<div data-fls-addtocart-product="" class="product__qty">
-									<div data-fls-quantity="" class="quantity">
+									<div data-fls-quantity="" class="body-table__item body-table__qty">
 										<button data-fls-quantity-minus="" type="button" class="--icon-minus"></button>
-										<input data-fls-quantity-value="" autocomplete="off" type="text" name="form[]" value="1" class="cart__input product__input">
+										<input data-fls-quantity-value="" autocomplete="off" type="text" name="form[]" value="1" class="cart__input">
 										<button data-fls-quantity-plus="" type="button" class="--icon-plus"></button>
+										<span class="--icon-trash"></span>
 									</div>
-									<button data-fls-addtocart-button="" class="product__button button">add to cart</button>
+									<div class="body-table__item body-table__total">$ 110</div>
 								</div>
 							</div>
-							<div class="product__body text">
-								<h2>Опис</h2>
+							<div class="cart__summary">
 								<p>
-									Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex beatae dolor expedita cum fugiat in quibusdam obcaecati, cumque harum saepe asperiores, a, at fuga ratione commodi veniam officia iusto tempore?
+									2 товара на суму:
+									<span>$ 110</span>
 								</p>
 								<p>
-									Amet, corrupti similique quaerat aspernatur excepturi quam earum vero vitae corporis ratione illum delectus qui ab debitis a quasi odit consequatur non temporibus, incidunt, obcaecati assumenda perspiciatis accusantium illo? Qui!
+									Разом:
+									<span>$ 110</span>
 								</p>
-								<p>
-									Temporibus, doloribus deleniti ipsum culpa, ullam dolorem nam rem optio laudantium minus magni. Iste sunt sed qui tempora porro beatae, ab unde nihil nesciunt, consectetur asperiores dolores! Est, atque a!
-								</p>
-								<h2>Характеристики</h2>
-								<p>
-									Amet, corrupti similique quaerat aspernatur excepturi quam earum vero vitae corporis ratione illum delectus qui ab debitis a quasi odit consequatur non temporibus, incidunt, obcaecati assumenda perspiciatis accusantium illo? Qui!
-								</p>
-								<p>
-									Temporibus, doloribus deleniti ipsum culpa, ullam dolorem nam rem optio laudantium minus magni. Iste sunt sed qui tempora porro beatae, ab unde nihil nesciunt, consectetur asperiores dolores! Est, atque a!
-								</p>
+								<button data-fls-button="" type="submit" class="cart__submit button">Оформити замовлення</button>
 							</div>
-						</div>
+						</form>
 					</div>
 				</section>
 				<section class="popular">

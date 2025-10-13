@@ -1,4 +1,6 @@
 import "./app.min.js";
+import "./slider.min.js";
+import "./quantity.min.js";
 class DynamicAdapt {
   constructor() {
     this.type = "max";

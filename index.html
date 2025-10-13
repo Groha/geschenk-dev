@@ -5,10 +5,12 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="shortcut icon" href="./assets/img/favicon.ico">
 		<title>Home Page</title>
-		<script type="module" crossorigin="" src="./js/index.min.js?v=1759409769275"></script>
+		<script type="module" crossorigin="" src="./js/index.min.js?v=1760346220917"></script>
 		<link rel="modulepreload" crossorigin="" href="./js/app.min.js">
-		<link rel="stylesheet" crossorigin="" href="./css/app.min.css?v=1759409769275">
-		<link rel="stylesheet" crossorigin="" href="./css/index.min.css?v=1759409769275">
+		<link rel="modulepreload" crossorigin="" href="./js/slider.min.js">
+		<link rel="stylesheet" crossorigin="" href="./css/app.min.css?v=1760346220917">
+		<link rel="stylesheet" crossorigin="" href="./css/slider.min.css?v=1760346220917">
+		<link rel="stylesheet" crossorigin="" href="./css/index.min.css?v=1760346220917">
 	</head>
 	<body>
 		<div class="wrapper">
@@ -62,17 +64,22 @@
 </each>
 </fetch>
 -->
-					<ul class="header__langlist">
-						<li class="header__langitem">
-							<a href="#" class="header__langlink">DE</a>
-						</li>
-						<li class="header__langitem">
-							<a href="#" class="header__langlink">UA</a>
-						</li>
-						<li class="header__langitem active">
-							<a href="#" class="header__langlink">RU</a>
-						</li>
-					</ul>
+					<div class="header__right">
+						<a href="#" class="header__cart --icon-cart">
+							<span class="" data-fls-addtocart=""></span>
+						</a>
+						<ul class="header__langlist">
+							<li class="header__langitem">
+								<a href="#" class="header__langlink">DE</a>
+							</li>
+							<li class="header__langitem">
+								<a href="#" class="header__langlink">UA</a>
+							</li>
+							<li class="header__langitem active">
+								<a href="#" class="header__langlink">RU</a>
+							</li>
+						</ul>
+					</div>
 				</div>
 			</header>
 			<main class="page page--home">
