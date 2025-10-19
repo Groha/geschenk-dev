@@ -5,20 +5,17 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="shortcut icon" href="./assets/img/favicon.ico">
 		<title>Product Page</title>
-		<script type="module" crossorigin="" src="./js/product.min.js?v=1760346220918"></script>
-		<link rel="modulepreload" crossorigin="" href="./js/app.min.js">
-		<link rel="modulepreload" crossorigin="" href="./js/slider.min.js">
-		<link rel="modulepreload" crossorigin="" href="./js/quantity.min.js">
-		<link rel="stylesheet" crossorigin="" href="./css/app.min.css?v=1760346220918">
-		<link rel="stylesheet" crossorigin="" href="./css/slider.min.css?v=1760346220918">
-		<link rel="stylesheet" crossorigin="" href="./css/quantity.min.css?v=1760346220918">
-		<link rel="stylesheet" crossorigin="" href="./css/product.min.css?v=1760346220918">
+		<script type="module" crossorigin="" src="./js/app.min.js?v=1760882254117"></script>
+		<script type="module" crossorigin="" src="./js/slider.min.js?v=1760882254117"></script>
+		<link rel="stylesheet" crossorigin="" href="./css/app.min.css?v=1760882254117">
+		<link rel="stylesheet" crossorigin="" href="./css/slider.min.css?v=1760882254117">
+		<link rel="stylesheet" crossorigin="" href="./css/product.min.css?v=1760882254117">
 	</head>
 	<body>
 		<div class="wrapper">
 			<header data-fls-header="" class="header">
 				<div class="header__container">
-					<a href="/">
+					<a href="/" class="header__logo-link">
 						<picture>
 							<picture>
 								<img alt="Logo" class="header__logo" src="./assets/img/logo.webp">
@@ -66,7 +63,7 @@
 </each>
 </fetch>
 -->
-					<div class="header__right">
+					<div data-fls-dynamic=".header__container, 768, 1" class="header__right">
 						<a href="#" class="header__cart --icon-cart">
 							<span class="" data-fls-addtocart=""></span>
 						</a>
@@ -96,7 +93,7 @@
 						<li class="breadcrumb__item">Юбилейный сюрприз</li>
 					</ul>
 				</div>
-				<section class="product">
+				<section data-fls-addtocart-product="" class="product">
 					<div class="product__container">
 						<div class="product__sliders" data-fls-dynamic=".product__main,767.98,3">
 							<div data-fls-slider="" class="product__slider swiper">
@@ -105,7 +102,7 @@
 										<picture>
 											<source media="(max-width: 600px)" srcset="./assets/img/home/hero_bg-600.webp" type="image/webp">
 											<source media="(max-width: 1200px)" srcset="./assets/img/home/hero_bg-1200.webp" type="image/webp">
-											<img alt="Image" src="./assets/img/home/hero_bg.webp">
+											<img data-fls-addtocart-image="" alt="Image" src="./assets/img/home/hero_bg.webp">
 										</picture>
 									</div>
 									<div class="product__slide swiper-slide">
@@ -193,15 +190,7 @@
 							</div>
 							<div class="product__footer">
 								<div class="product__price">$ 55</div>
-								<!-- <button data-fls-button type="button" class="product__button button">add to cart</button> -->
-								<div data-fls-addtocart-product="" class="product__qty">
-									<div data-fls-quantity="" class="quantity">
-										<button data-fls-quantity-minus="" type="button" class="--icon-minus"></button>
-										<input data-fls-quantity-value="" autocomplete="off" type="text" name="form[]" value="1" class="cart__input product__input">
-										<button data-fls-quantity-plus="" type="button" class="--icon-plus"></button>
-									</div>
-									<button data-fls-addtocart-button="" class="product__button button">add to cart</button>
-								</div>
+								<button data-fls-addtocart-button="" data-fls-button="" type="button" class="product__button button">add to cart</button>
 							</div>
 							<div class="product__body text">
 								<h2>Опис</h2>

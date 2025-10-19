@@ -5,17 +5,16 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="shortcut icon" href="./assets/img/favicon.ico">
 		<title>Cart</title>
-		<script type="module" crossorigin="" src="./js/app.min.js?v=1760346220918"></script>
-		<script type="module" crossorigin="" src="./js/quantity.min.js?v=1760346220918"></script>
-		<link rel="stylesheet" crossorigin="" href="./css/app.min.css?v=1760346220918">
-		<link rel="stylesheet" crossorigin="" href="./css/quantity.min.css?v=1760346220918">
-		<link rel="stylesheet" crossorigin="" href="./css/cart.min.css?v=1760346220918">
+		<script type="module" crossorigin="" src="./js/cart.min.js?v=1760882254116"></script>
+		<link rel="modulepreload" crossorigin="" href="./js/app.min.js">
+		<link rel="stylesheet" crossorigin="" href="./css/app.min.css?v=1760882254116">
+		<link rel="stylesheet" crossorigin="" href="./css/cart.min.css?v=1760882254116">
 	</head>
 	<body>
 		<div class="wrapper">
 			<header data-fls-header="" class="header">
 				<div class="header__container">
-					<a href="/">
+					<a href="/" class="header__logo-link">
 						<picture>
 							<picture>
 								<img alt="Logo" class="header__logo" src="./assets/img/logo.webp">
@@ -63,7 +62,7 @@
 </each>
 </fetch>
 -->
-					<div class="header__right">
+					<div data-fls-dynamic=".header__container, 768, 1" class="header__right">
 						<a href="#" class="header__cart --icon-cart">
 							<span class="" data-fls-addtocart=""></span>
 						</a>
@@ -85,52 +84,169 @@
 				<section class="cart">
 					<div class="cart__container">
 						<h1 class="cart__title">Ваш кошик</h1>
-						<form class="cart__form">
-							<div class="cart__table table-cart">
-								<div class="table-cart__header header-table">
-									<span class="header-table__item header-table__name">Назва товару</span>
-									<span class="header-table__item header-table__qty">Количество</span>
-									<span class="header-table__item header-table__total">Сумма</span>
-								</div>
-								<div class="table-cart__body body-table">
-									<div class="body-table__item body-table__name">
-										<div class="body-table__image">
-											<picture>
-												<source media="(max-width: 600px)" srcset="./assets/img/home/card-600.webp" type="image/webp">
-												<img alt="Image" src="./assets/img/home/card.webp">
-											</picture>
+						<div class="cart__body">
+							<div class="cart__items">
+								<article class="cart-item fade-in">
+									<picture>
+										<source media="(max-width: 600px)" srcset="./assets/img/home/card-600.webp" type="image/webp">
+										<img alt="Печать ночі" class="cart-item__img" src="./assets/img/home/card.webp">
+									</picture>
+									<div class="cart-item__body">
+										<div class="cart-item__info">
+											<h3 class="cart-item__title">Печать ночі</h3>
+											<p class="cart-item__meta">Артикул: 3814</p>
 										</div>
-										<ul class="body-table__main main-body">
-											<li class="main-body__availability">В наличии</li>
-											<li class="main-body__name">
-												<h2>Юбилейный сюрприз</h2>
-											</li>
-											<li class="main-body__price">$ 55</li>
-										</ul>
+										<div class="cart-item__controls">
+											<span class="cart-item__price" data-price="790">790 ₴</span>
+											<div class="cart-item__quantity">
+												<button class="qty-btn minus">−</button>
+												<input type="number" value="1" min="1">
+												<button class="qty-btn plus">+</button>
+											</div>
+											<button class="cart-item__remove">🗑️</button>
+										</div>
 									</div>
-									<div data-fls-quantity="" class="body-table__item body-table__qty">
-										<button data-fls-quantity-minus="" type="button" class="--icon-minus"></button>
-										<input data-fls-quantity-value="" autocomplete="off" type="text" name="form[]" value="1" class="cart__input">
-										<button data-fls-quantity-plus="" type="button" class="--icon-plus"></button>
-										<span class="--icon-trash"></span>
+								</article>
+								<article class="cart-item fade-in">
+									<picture>
+										<source media="(max-width: 600px)" srcset="./assets/img/home/card-600.webp" type="image/webp">
+										<img alt="Печать ночі" class="cart-item__img" src="./assets/img/home/card.webp">
+									</picture>
+									<div class="cart-item__body">
+										<div class="cart-item__info">
+											<h3 class="cart-item__title">Печать ночі</h3>
+											<p class="cart-item__meta">Артикул: 3814</p>
+										</div>
+										<div class="cart-item__controls">
+											<span class="cart-item__price" data-price="790">790 ₴</span>
+											<div class="cart-item__quantity">
+												<button class="qty-btn minus">−</button>
+												<input type="number" value="1" min="1">
+												<button class="qty-btn plus">+</button>
+											</div>
+											<button class="cart-item__remove">🗑️</button>
+										</div>
 									</div>
-									<div class="body-table__item body-table__total">$ 110</div>
+								</article>
+								<article class="cart-item fade-in">
+									<picture>
+										<source media="(max-width: 600px)" srcset="./assets/img/home/card-600.webp" type="image/webp">
+										<img alt="Печать ночі" class="cart-item__img" src="./assets/img/home/card.webp">
+									</picture>
+									<div class="cart-item__body">
+										<div class="cart-item__info">
+											<h3 class="cart-item__title">Печать ночі</h3>
+											<p class="cart-item__meta">Артикул: 3814</p>
+										</div>
+										<div class="cart-item__controls">
+											<span class="cart-item__price" data-price="790">790 ₴</span>
+											<div class="cart-item__quantity">
+												<button class="qty-btn minus">−</button>
+												<input type="number" value="1" min="1">
+												<button class="qty-btn plus">+</button>
+											</div>
+											<button class="cart-item__remove">🗑️</button>
+										</div>
+									</div>
+								</article>
+								<article class="cart-item fade-in">
+									<picture>
+										<source media="(max-width: 600px)" srcset="./assets/img/home/card-600.webp" type="image/webp">
+										<img alt="Печать ночі" class="cart-item__img" src="./assets/img/home/card.webp">
+									</picture>
+									<div class="cart-item__body">
+										<div class="cart-item__info">
+											<h3 class="cart-item__title">Печать ночі</h3>
+											<p class="cart-item__meta">Артикул: 3814</p>
+										</div>
+										<div class="cart-item__controls">
+											<span class="cart-item__price" data-price="790">790 ₴</span>
+											<div class="cart-item__quantity">
+												<button class="qty-btn minus">−</button>
+												<input type="number" value="1" min="1">
+												<button class="qty-btn plus">+</button>
+											</div>
+											<button class="cart-item__remove">🗑️</button>
+										</div>
+									</div>
+								</article>
+								<article class="cart-item fade-in">
+									<picture>
+										<source media="(max-width: 600px)" srcset="./assets/img/home/card-600.webp" type="image/webp">
+										<img alt="Печать ночі" class="cart-item__img" src="./assets/img/home/card.webp">
+									</picture>
+									<div class="cart-item__body">
+										<div class="cart-item__info">
+											<h3 class="cart-item__title">Печать ночі</h3>
+											<p class="cart-item__meta">Артикул: 3814</p>
+										</div>
+										<div class="cart-item__controls">
+											<span class="cart-item__price" data-price="790">790 ₴</span>
+											<div class="cart-item__quantity">
+												<button class="qty-btn minus">−</button>
+												<input type="number" value="1" min="1">
+												<button class="qty-btn plus">+</button>
+											</div>
+											<button class="cart-item__remove">🗑️</button>
+										</div>
+									</div>
+								</article>
+							</div>
+							<div class="cart__summary summary">
+								<h2 class="summary__title">Ваше замовлення</h2>
+								<div class="summary__row">
+									<span>Товари на суму:</span>
+									<span class="summary__subtotal">790 ₴</span>
 								</div>
+								<div class="summary__row total">
+									<span>Разом:</span>
+									<span class="summary__total-sum">790 ₴</span>
+								</div>
+								<button data-fls-button="" class="summary__button button">ОФОРМИТИ ЗАМОВЛЕННЯ</button>
 							</div>
-							<div class="cart__summary">
-								<p>
-									2 товара на суму:
-									<span>$ 110</span>
-								</p>
-								<p>
-									Разом:
-									<span>$ 110</span>
-								</p>
-								<button data-fls-button="" type="submit" class="cart__submit button">Оформити замовлення</button>
-							</div>
-						</form>
+						</div>
 					</div>
 				</section>
+				<!--
+<section class="cart">
+<div class="cart__container">
+<h1 class="cart__title">Ваш кошик</h1>
+<form class="cart__form">
+<div class="cart__table table-cart">
+<div class="table-cart__header header-table">
+<span class="header-table__item header-table__name">Назва товару</span>
+<span class="header-table__item header-table__qty">Количество</span>
+<span class="header-table__item header-table__total">Сумма</span>
+</div>
+<div class="table-cart__body body-table">
+<div class="body-table__item body-table__name">
+<div class="body-table__image">
+<img src="@img/home/card.png" alt="Image">
+</div>
+<ul class="body-table__main main-body">
+<li class="main-body__availability">В наличии</li>
+<li class="main-body__name"><h2>Юбилейный сюрприз</h2></li>
+<li class="main-body__price">$ 55</li>
+</ul>
+</div>
+<div data-fls-quantity class="body-table__item body-table__qty">
+<button data-fls-quantity-minus type="button" class="--icon-minus"></button>
+<input data-fls-quantity-value autocomplete="off" type="text" name="form[]" value="1" class="cart__input" />
+<button data-fls-quantity-plus type="button" class="--icon-plus"></button>
+<span class="--icon-trash"></span>
+</div>
+<div class="body-table__item body-table__total">$ 110</div>
+</div>
+</div>
+<div class="cart__summary">
+<p>2 товара на суму: <span>$ 110</span></p>
+<p>Разом: <span>$ 110</span></p>
+<button data-fls-button type="submit" class="cart__submit button">Оформити замовлення</button>
+</div>
+</form>
+</div>
+</section>
+-->
 				<section class="popular">
 					<div class="popular__container">
 						<h2 class="popular__title title">Похожие наборы</h2>
