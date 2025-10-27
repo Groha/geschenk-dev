@@ -5,9 +5,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="shortcut icon" href="./assets/img/favicon.ico">
 		<title>Checkout</title>
-		<script type="module" crossorigin="" src="./js/app.min.js?v=1761556467659"></script>
-		<link rel="stylesheet" crossorigin="" href="./css/app.min.css?v=1761556467659">
-		<link rel="stylesheet" crossorigin="" href="./css/checkout.min.css?v=1761556467659">
+		<script type="module" crossorigin="" src="./js/checkout.min.js?v=1761561832926"></script>
+		<link rel="modulepreload" crossorigin="" href="./js/app.min.js">
+		<link rel="stylesheet" crossorigin="" href="./css/app.min.css?v=1761561832926">
+		<link rel="stylesheet" crossorigin="" href="./css/checkout.min.css?v=1761561832926">
 	</head>
 	<body>
 		<div class="wrapper">
@@ -62,7 +63,7 @@
 </fetch>
 -->
 					<div data-fls-dynamic=".header__container, 768, 1" class="header__right">
-						<a href="#" class="header__cart --icon-cart">
+						<a href="/cart.html" class="header__cart --icon-cart">
 							<span class="cart-count"></span>
 						</a>
 						<ul class="header__langlist">
@@ -79,7 +80,46 @@
 					</div>
 				</div>
 			</header>
-			<main class="page page--cart"></main>
+			<main class="page page--checkout">
+				<div class="checkout">
+					<h1>Оформление заказа</h1>
+					<div class="checkout__cart">
+						<h2>Ваши товары</h2>
+						<ul class="checkout__items"></ul>
+						<div class="checkout__summary">
+							<p>
+								Количество товаров:
+								<span class="checkout__subtotal">0 шт.</span>
+							</p>
+							<p>
+								Итого:
+								<span class="checkout__total">0 ₴</span>
+							</p>
+						</div>
+					</div>
+					<form class="checkout__form">
+						<h2>Ваши данные</h2>
+						<label>
+							Имя:
+							<input type="text" name="name" required>
+						</label>
+						<label>
+							Телефон:
+							<input type="tel" name="phone" required>
+						</label>
+						<label>
+							E-mail:
+							<input type="email" name="email">
+						</label>
+						<label>
+							Адрес:
+							<textarea name="address" required></textarea>
+						</label>
+						<button type="submit">Оформить заказ</button>
+					</form>
+					<div class="checkout__message"></div>
+				</div>
+			</main>
 			<footer data-fls-footer="" class="footer">
 				<div class="footer__container">
 					<div class="footer__body">

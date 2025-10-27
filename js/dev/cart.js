@@ -1,45 +1,17 @@
 import { u as updateCartCount, g as getCart, s as saveCart } from "./app.min.js";
 /* empty css           */
-function formQuantity() {
-  document.addEventListener("click", quantityActions);
-  document.addEventListener("input", quantityActions);
-  function quantityActions(e) {
-    const type = e.type;
-    const targetElement = e.target;
-    if (type === "click") {
-      if (targetElement.closest("[data-fls-quantity-plus]") || targetElement.closest("[data-fls-quantity-minus]")) {
-        const valueElement = targetElement.closest("[data-fls-quantity]").querySelector("[data-fls-quantity-value]");
-        let value = parseInt(valueElement.value);
-        if (targetElement.hasAttribute("data-fls-quantity-plus")) {
-          value++;
-          if (+valueElement.dataset.flsQuantityMax && +valueElement.dataset.flsQuantityMax < value) {
-            value = valueElement.dataset.flsQuantityMax;
-          }
-        } else {
-          --value;
-          if (+valueElement.dataset.flsQuantityMin) {
-            if (+valueElement.dataset.flsQuantityMin > value) {
-              value = valueElement.dataset.flsQuantityMin;
-            }
-          } else if (value < 1) {
-            value = 1;
-          }
-        }
-        targetElement.closest("[data-fls-quantity]").querySelector("[data-fls-quantity-value]").value = value;
-      }
-    } else if (type === "input") {
-      if (targetElement.closest("[data-fls-quantity-value]")) {
-        const valueElement = targetElement.closest("[data-fls-quantity-value]");
-        valueElement.value == 0 || /[^0-9]/gi.test(valueElement.value) ? valueElement.value = 1 : null;
-      }
-    }
-  }
-}
-document.querySelector("[data-fls-quantity]") ? window.addEventListener("load", formQuantity) : null;
 function renderCart() {
   const cart = getCart();
   const list = document.querySelector(".cart__items");
+  const summary = document.querySelector(".cart__summary");
   list.innerHTML = "";
+  if (!cart.length) {
+    summary.innerHTML = `
+      <p>Ваша корзина пуста.</p>
+      <a href="/products.html" data-fls-button class="summary__button button">Перейти к товарам</a>
+    `;
+    return;
+  }
   cart.forEach((item) => {
     list.innerHTML += `
       <article class="cart-item fade-in" data-id="${item.id}">
@@ -53,11 +25,12 @@ function renderCart() {
           <div class="cart-item__controls">
             <span class="cart-item__price" data-price="${item.price}">${item.price * item.qty} ₴</span>
             <div class="cart-item__quantity">
-              <button class="qty-btn minus">−</button>
-              <input type="number" value="${item.qty}">
+              <div class="double-btn">
+                ${item.qty > 1 ? '<button class="qty-btn minus">−</button>' : '<button class="qty-btn remove --icon-trash"></button>'}
+              </div>
+              <span class="qty-value">${item.qty}</span>
               <button class="qty-btn plus">+</button>
             </div>
-            <button class="cart-item__remove">🗑️</button>
           </div>
         </div>
       </article>
@@ -68,20 +41,22 @@ function renderCart() {
 }
 function updateTotals() {
   const cart = getCart();
+  const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
   const total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
   document.querySelector(".summary__total-sum").textContent = `${total} ₴`;
+  document.querySelector(".summary__subtotal").textContent = `${totalQty} шт.`;
 }
 function attachCartEvents() {
   document.querySelectorAll(".cart-item").forEach((item) => {
     const id = item.dataset.id;
-    item.querySelector("input");
+    item.querySelector(".qty-value");
     item.querySelector(".plus").addEventListener("click", () => {
       changeQty(id, 1);
     });
-    item.querySelector(".minus").addEventListener("click", () => {
+    item.querySelector(".minus")?.addEventListener("click", () => {
       changeQty(id, -1);
     });
-    item.querySelector(".cart-item__remove").addEventListener("click", () => {
+    item.querySelector(".remove")?.addEventListener("click", () => {
       removeItem(id);
     });
   });
@@ -92,11 +67,13 @@ function changeQty(id, delta) {
   product.qty = Math.max(1, product.qty + delta);
   saveCart(cart);
   renderCart();
+  updateCartCount();
 }
 function removeItem(id) {
   let cart = getCart().filter((i) => i.id !== id);
   saveCart(cart);
   renderCart();
+  updateCartCount();
 }
 renderCart();
 updateCartCount();
