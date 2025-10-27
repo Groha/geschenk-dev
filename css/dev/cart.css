@@ -148,6 +148,11 @@
     max-width: 32.5rem;
   }
 }
+@media (max-width: 47.99875em) {
+  .summary__button {
+    margin-top: 0.75rem;
+  }
+}
 @media (width <= 33.75rem) {
   .cart .cart-item {
     justify-content: space-between;
@@ -155,6 +160,12 @@
   }
   .cart .cart-item__body {
     display: grid;
+  }
+}
+@media (width <= 23.75em) {
+  .cart .cart-item__controls {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 @media (max-width: 20em) {

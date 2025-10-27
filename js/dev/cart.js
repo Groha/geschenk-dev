@@ -1,5 +1,6 @@
 import { u as updateCartCount, g as getCart, s as saveCart } from "./app.min.js";
 /* empty css           */
+let isFirstRender = true;
 function renderCart() {
   const cart = getCart();
   const list = document.querySelector(".cart__items");
@@ -7,14 +8,14 @@ function renderCart() {
   list.innerHTML = "";
   if (!cart.length) {
     summary.innerHTML = `
-      <p>Ваша корзина пуста.</p>
+      <p style="text-align:center">Ваша корзина пуста.</p>
       <a href="/products.html" data-fls-button class="summary__button button">Перейти к товарам</a>
     `;
     return;
   }
   cart.forEach((item) => {
     list.innerHTML += `
-      <article class="cart-item fade-in" data-id="${item.id}">
+      <article class="cart-item ${isFirstRender ? "fade-in" : ""}" data-id="${item.id}">
         <img src="${item.img}" alt="${item.title}" class="cart-item__img">
         <div class="cart-item__body">
           <div class="cart-item__info">
@@ -38,6 +39,7 @@ function renderCart() {
   });
   attachCartEvents();
   updateTotals();
+  isFirstRender = false;
 }
 function updateTotals() {
   const cart = getCart();
@@ -49,7 +51,6 @@ function updateTotals() {
 function attachCartEvents() {
   document.querySelectorAll(".cart-item").forEach((item) => {
     const id = item.dataset.id;
-    item.querySelector(".qty-value");
     item.querySelector(".plus").addEventListener("click", () => {
       changeQty(id, 1);
     });
@@ -67,6 +68,8 @@ function changeQty(id, delta) {
   product.qty = Math.max(1, product.qty + delta);
   saveCart(cart);
   renderCart();
+  const priceEl = document.querySelector(`.cart-item[data-id="${id}"] .cart-item__price`);
+  animatePriceChange(priceEl, product.price * product.qty);
   updateCartCount();
 }
 function removeItem(id) {
@@ -74,6 +77,14 @@ function removeItem(id) {
   saveCart(cart);
   renderCart();
   updateCartCount();
+}
+function animatePriceChange(el, newValue) {
+  el.style.transition = "transform 0.3s ease";
+  el.style.transform = "scale(1.2)";
+  setTimeout(() => {
+    el.textContent = `${newValue} ₴`;
+    el.style.transform = "scale(1)";
+  }, 200);
 }
 renderCart();
 updateCartCount();

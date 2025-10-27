@@ -375,7 +375,7 @@ body.light-theme {
   transition: color 0.5s ease-in-out;
 }
 .nav__footer-title {
-  font-size: 1.375rem;
+  font-size: 1.125rem;
   font-weight: 500;
 }
 .nav__footer-item:not(:last-child) {
@@ -625,6 +625,7 @@ body.light-theme {
     font-size: 0.875rem;
   }
   .nav__footer-title {
+    font-size: 1.375rem;
     margin-bottom: 1.25rem;
   }
 }@media (min-width: 47.99875em){
