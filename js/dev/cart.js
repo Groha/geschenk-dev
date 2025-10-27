@@ -1,4 +1,5 @@
-import "./app.min.js";
+import { u as updateCartCount, g as getCart, s as saveCart } from "./app.min.js";
+/* empty css           */
 function formQuantity() {
   document.addEventListener("click", quantityActions);
   document.addEventListener("input", quantityActions);
@@ -35,45 +36,67 @@ function formQuantity() {
   }
 }
 document.querySelector("[data-fls-quantity]") ? window.addEventListener("load", formQuantity) : null;
-document.querySelectorAll(".cart-item").forEach((item) => {
-  const input = item.querySelector("input");
-  const plus = item.querySelector(".plus");
-  const minus = item.querySelector(".minus");
-  parseFloat(item.querySelector(".cart-item__price").dataset.price);
-  const updateTotal = () => {
-    const subtotal = Array.from(document.querySelectorAll(".cart-item")).reduce((sum, el) => {
-      const qty = parseInt(el.querySelector("input").value);
-      const pr = parseFloat(el.querySelector(".cart-item__price").dataset.price);
-      return sum + qty * pr;
-    }, 0);
-    document.querySelector(".summary__subtotal").textContent = `${subtotal} ₴`;
-    document.querySelector(".summary__total-sum").textContent = `${subtotal} ₴`;
-  };
-  plus.addEventListener("click", () => {
-    input.value = parseInt(input.value) + 1;
-    animatePriceChange(item);
-    updateTotal();
+function renderCart() {
+  const cart = getCart();
+  const list = document.querySelector(".cart__items");
+  list.innerHTML = "";
+  cart.forEach((item) => {
+    list.innerHTML += `
+      <article class="cart-item fade-in" data-id="${item.id}">
+        <img src="${item.img}" alt="${item.title}" class="cart-item__img">
+        <div class="cart-item__body">
+          <div class="cart-item__info">
+            <h3 class="cart-item__title">${item.title}</h3>
+            <p class="cart-item__meta">Артикул: ${item.id}</p>
+          </div>
+
+          <div class="cart-item__controls">
+            <span class="cart-item__price" data-price="${item.price}">${item.price * item.qty} ₴</span>
+            <div class="cart-item__quantity">
+              <button class="qty-btn minus">−</button>
+              <input type="number" value="${item.qty}">
+              <button class="qty-btn plus">+</button>
+            </div>
+            <button class="cart-item__remove">🗑️</button>
+          </div>
+        </div>
+      </article>
+    `;
   });
-  minus.addEventListener("click", () => {
-    if (input.value > 1) {
-      input.value = parseInt(input.value) - 1;
-      animatePriceChange(item);
-      updateTotal();
-    }
-  });
-  item.querySelector(".cart-item__remove").addEventListener("click", () => {
-    item.classList.add("fade-out");
-    setTimeout(() => {
-      item.remove();
-      updateTotal();
-    }, 400);
-  });
-});
-function animatePriceChange(item) {
-  const price = item.querySelector(".cart-item__price");
-  price.style.transition = "transform 0.2s ease";
-  price.style.transform = "scale(1.1)";
-  setTimeout(() => {
-    price.style.transform = "scale(1)";
-  }, 200);
+  attachCartEvents();
+  updateTotals();
 }
+function updateTotals() {
+  const cart = getCart();
+  const total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+  document.querySelector(".summary__total-sum").textContent = `${total} ₴`;
+}
+function attachCartEvents() {
+  document.querySelectorAll(".cart-item").forEach((item) => {
+    const id = item.dataset.id;
+    item.querySelector("input");
+    item.querySelector(".plus").addEventListener("click", () => {
+      changeQty(id, 1);
+    });
+    item.querySelector(".minus").addEventListener("click", () => {
+      changeQty(id, -1);
+    });
+    item.querySelector(".cart-item__remove").addEventListener("click", () => {
+      removeItem(id);
+    });
+  });
+}
+function changeQty(id, delta) {
+  let cart = getCart();
+  const product = cart.find((i) => i.id === id);
+  product.qty = Math.max(1, product.qty + delta);
+  saveCart(cart);
+  renderCart();
+}
+function removeItem(id) {
+  let cart = getCart().filter((i) => i.id !== id);
+  saveCart(cart);
+  renderCart();
+}
+renderCart();
+updateCartCount();

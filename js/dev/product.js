@@ -1,122 +1,90 @@
-import "./app.min.js";
+import { g as getCart, s as saveCart, u as updateCartCount } from "./app.min.js";
 import "./slider.min.js";
-import "./quantity.min.js";
-class DynamicAdapt {
-  constructor() {
-    this.type = "max";
-    this.init();
-  }
-  init() {
-    this.objects = [];
-    this.daClassname = "--dynamic";
-    this.nodes = [...document.querySelectorAll("[data-fls-dynamic]")];
-    this.nodes.forEach((node) => {
-      const data = node.dataset.flsDynamic.trim();
-      const dataArray = data.split(`,`);
-      const object = {};
-      object.element = node;
-      object.parent = node.parentNode;
-      object.destinationParent = dataArray[3] ? node.closest(dataArray[3].trim()) || document : document;
-      dataArray[3] ? dataArray[3].trim() : null;
-      const objectSelector = dataArray[0] ? dataArray[0].trim() : null;
-      if (objectSelector) {
-        const foundDestination = object.destinationParent.querySelector(objectSelector);
-        if (foundDestination) {
-          object.destination = foundDestination;
-        }
+/* empty css           */
+function addToCart() {
+  document.addEventListener("click", addToCartAction);
+  function addToCartAction(e) {
+    const targetElement = e.target;
+    if (targetElement.closest("[data-fls-addtocart-button]")) {
+      let addToCart2 = document.querySelector("[data-fls-addtocart]");
+      const addToCartButton = targetElement.closest("[data-fls-addtocart-button]");
+      const addToCartProduct = addToCartButton.closest("[data-fls-addtocart-product]");
+      if (addToCartProduct) {
+        let addToCartQuantity = addToCartProduct.querySelector("[data-fls-addtocart-quantity]");
+        addToCartQuantity = addToCartQuantity ? +addToCartQuantity.value : 1;
+        const addToCartImage = addToCartProduct.querySelector("[data-fls-addtocart-image]");
+        const flyImgSpeed = +addToCartImage?.dataset?.flsAddtocartImage || 500;
+        addToCartImage ? addToCartImageFly(addToCartImage, addToCart2, flyImgSpeed) : null;
+        setTimeout(() => {
+          addToCart2.innerHTML = +addToCart2.innerHTML + addToCartQuantity;
+        }, addToCartImage ? flyImgSpeed : 0);
+      } else {
+        addToCart2.innerHTML = +addToCart2.innerHTML + 1;
       }
-      object.breakpoint = dataArray[1] ? dataArray[1].trim() : `767.98`;
-      object.place = dataArray[2] ? dataArray[2].trim() : `last`;
-      object.index = this.indexInParent(object.parent, object.element);
-      this.objects.push(object);
-    });
-    this.arraySort(this.objects);
-    this.mediaQueries = this.objects.map(({ breakpoint }) => `(${this.type}-width: ${breakpoint / 16}em),${breakpoint}`).filter((item, index, self) => self.indexOf(item) === index);
-    this.mediaQueries.forEach((media) => {
-      const mediaSplit = media.split(",");
-      const matchMedia = window.matchMedia(mediaSplit[0]);
-      const mediaBreakpoint = mediaSplit[1];
-      const objectsFilter = this.objects.filter(({ breakpoint }) => breakpoint === mediaBreakpoint);
-      matchMedia.addEventListener("change", () => {
-        this.mediaHandler(matchMedia, objectsFilter);
-      });
-      this.mediaHandler(matchMedia, objectsFilter);
-    });
-  }
-  mediaHandler(matchMedia, objects) {
-    if (matchMedia.matches) {
-      objects.forEach((object) => {
-        if (object.destination) {
-          this.moveTo(object.place, object.element, object.destination);
-        }
-      });
-    } else {
-      objects.forEach(({ parent, element, index }) => {
-        if (element.classList.contains(this.daClassname)) {
-          this.moveBack(parent, element, index);
-        }
-      });
     }
   }
-  moveTo(place, element, destination) {
-    element.classList.add(this.daClassname);
-    const index = place === "last" || place === "first" ? place : parseInt(place, 10);
-    if (index === "last" || index >= destination.children.length) {
-      destination.append(element);
-    } else if (index === "first") {
-      destination.prepend(element);
-    } else {
-      destination.children[index].before(element);
-    }
-  }
-  moveBack(parent, element, index) {
-    element.classList.remove(this.daClassname);
-    if (parent.children[index] !== void 0) {
-      parent.children[index].before(element);
-    } else {
-      parent.append(element);
-    }
-  }
-  indexInParent(parent, element) {
-    return [...parent.children].indexOf(element);
-  }
-  arraySort(arr) {
-    if (this.type === "min") {
-      arr.sort((a, b) => {
-        if (a.breakpoint === b.breakpoint) {
-          if (a.place === b.place) {
-            return 0;
-          }
-          if (a.place === "first" || b.place === "last") {
-            return -1;
-          }
-          if (a.place === "last" || b.place === "first") {
-            return 1;
-          }
-          return 0;
-        }
-        return a.breakpoint - b.breakpoint;
-      });
-    } else {
-      arr.sort((a, b) => {
-        if (a.breakpoint === b.breakpoint) {
-          if (a.place === b.place) {
-            return 0;
-          }
-          if (a.place === "first" || b.place === "last") {
-            return 1;
-          }
-          if (a.place === "last" || b.place === "first") {
-            return -1;
-          }
-          return 0;
-        }
-        return b.breakpoint - a.breakpoint;
-      });
-      return;
-    }
+  function addToCartImageFly(addToCartImage, addToCart2, flyImgSpeed) {
+    const flyImg = document.createElement("img");
+    flyImg.src = addToCartImage.src;
+    flyImg.style.cssText = `
+			position: absolute;
+			left: ${addToCartImage.getBoundingClientRect().left + scrollX}px;
+			top: ${addToCartImage.getBoundingClientRect().top + scrollY}px;
+			width: ${addToCartImage.offsetWidth}px;
+			transition: all ${flyImgSpeed}ms;
+		`;
+    document.body.insertAdjacentElement("beforeend", flyImg);
+    flyImg.style.left = `${addToCart2.getBoundingClientRect().left + scrollX}px`;
+    flyImg.style.top = `${addToCart2.getBoundingClientRect().top + scrollY}px`;
+    flyImg.style.width = 0;
+    flyImg.style.opacity = `0`;
+    setTimeout(() => {
+      flyImg.remove();
+    }, flyImgSpeed);
   }
 }
-if (document.querySelector("[data-fls-dynamic]")) {
-  window.addEventListener("load", () => new DynamicAdapt());
+document.querySelector("[data-fls-addtocart]") ? window.addEventListener("load", addToCart) : null;
+let toastTimeout;
+let lastClickedBtn = null;
+document.addEventListener("click", (e) => {
+  const addToCartBtn = e.target.closest(".add-to-cart");
+  if (addToCartBtn) {
+    lastClickedBtn = addToCartBtn;
+    const id = addToCartBtn.dataset.id;
+    const cart = getCart();
+    const existing = cart.find((item) => item.id === id);
+    if (existing) {
+      existing.qty++;
+    } else {
+      cart.push({
+        id,
+        title: addToCartBtn.dataset.title,
+        price: parseFloat(addToCartBtn.dataset.price),
+        qty: 1,
+        img: addToCartBtn.dataset.img
+      });
+    }
+    saveCart(cart);
+    updateCartCount();
+    showToast();
+  }
+  if (e.target.closest("#toast-close")) {
+    closeToast();
+  }
+});
+function showToast() {
+  const toast = document.querySelector(".product__toast");
+  toast.classList.add("show");
+  lastClickedBtn.style.pointerEvents = "none";
+  lastClickedBtn.style.opacity = "0.8";
+  toastTimeout = setTimeout(closeToast, 3e3);
+}
+function closeToast() {
+  const toast = document.querySelector(".product__toast");
+  toast.classList.remove("show");
+  clearTimeout(toastTimeout);
+  if (lastClickedBtn) {
+    lastClickedBtn.style.pointerEvents = "auto";
+    lastClickedBtn.style.opacity = "1";
+  }
 }

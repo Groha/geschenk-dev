@@ -4341,197 +4341,8 @@ function Navigation(_ref) {
     destroy
   });
 }
-function Thumb(_ref) {
-  let {
-    swiper,
-    extendParams,
-    on
-  } = _ref;
-  extendParams({
-    thumbs: {
-      swiper: null,
-      multipleActiveThumbs: true,
-      autoScrollOffset: 0,
-      slideThumbActiveClass: "swiper-slide-thumb-active",
-      thumbsContainerClass: "swiper-thumbs"
-    }
-  });
-  let initialized = false;
-  let swiperCreated = false;
-  swiper.thumbs = {
-    swiper: null
-  };
-  function onThumbClick() {
-    const thumbsSwiper = swiper.thumbs.swiper;
-    if (!thumbsSwiper || thumbsSwiper.destroyed) return;
-    const clickedIndex = thumbsSwiper.clickedIndex;
-    const clickedSlide = thumbsSwiper.clickedSlide;
-    if (clickedSlide && clickedSlide.classList.contains(swiper.params.thumbs.slideThumbActiveClass)) return;
-    if (typeof clickedIndex === "undefined" || clickedIndex === null) return;
-    let slideToIndex;
-    if (thumbsSwiper.params.loop) {
-      slideToIndex = parseInt(thumbsSwiper.clickedSlide.getAttribute("data-swiper-slide-index"), 10);
-    } else {
-      slideToIndex = clickedIndex;
-    }
-    if (swiper.params.loop) {
-      swiper.slideToLoop(slideToIndex);
-    } else {
-      swiper.slideTo(slideToIndex);
-    }
-  }
-  function init() {
-    const {
-      thumbs: thumbsParams
-    } = swiper.params;
-    if (initialized) return false;
-    initialized = true;
-    const SwiperClass = swiper.constructor;
-    if (thumbsParams.swiper instanceof SwiperClass) {
-      if (thumbsParams.swiper.destroyed) {
-        initialized = false;
-        return false;
-      }
-      swiper.thumbs.swiper = thumbsParams.swiper;
-      Object.assign(swiper.thumbs.swiper.originalParams, {
-        watchSlidesProgress: true,
-        slideToClickedSlide: false
-      });
-      Object.assign(swiper.thumbs.swiper.params, {
-        watchSlidesProgress: true,
-        slideToClickedSlide: false
-      });
-      swiper.thumbs.swiper.update();
-    } else if (isObject(thumbsParams.swiper)) {
-      const thumbsSwiperParams = Object.assign({}, thumbsParams.swiper);
-      Object.assign(thumbsSwiperParams, {
-        watchSlidesProgress: true,
-        slideToClickedSlide: false
-      });
-      swiper.thumbs.swiper = new SwiperClass(thumbsSwiperParams);
-      swiperCreated = true;
-    }
-    swiper.thumbs.swiper.el.classList.add(swiper.params.thumbs.thumbsContainerClass);
-    swiper.thumbs.swiper.on("tap", onThumbClick);
-    return true;
-  }
-  function update2(initial) {
-    const thumbsSwiper = swiper.thumbs.swiper;
-    if (!thumbsSwiper || thumbsSwiper.destroyed) return;
-    const slidesPerView = thumbsSwiper.params.slidesPerView === "auto" ? thumbsSwiper.slidesPerViewDynamic() : thumbsSwiper.params.slidesPerView;
-    let thumbsToActivate = 1;
-    const thumbActiveClass = swiper.params.thumbs.slideThumbActiveClass;
-    if (swiper.params.slidesPerView > 1 && !swiper.params.centeredSlides) {
-      thumbsToActivate = swiper.params.slidesPerView;
-    }
-    if (!swiper.params.thumbs.multipleActiveThumbs) {
-      thumbsToActivate = 1;
-    }
-    thumbsToActivate = Math.floor(thumbsToActivate);
-    thumbsSwiper.slides.forEach((slideEl) => slideEl.classList.remove(thumbActiveClass));
-    if (thumbsSwiper.params.loop || thumbsSwiper.params.virtual && thumbsSwiper.params.virtual.enabled) {
-      for (let i = 0; i < thumbsToActivate; i += 1) {
-        elementChildren(thumbsSwiper.slidesEl, `[data-swiper-slide-index="${swiper.realIndex + i}"]`).forEach((slideEl) => {
-          slideEl.classList.add(thumbActiveClass);
-        });
-      }
-    } else {
-      for (let i = 0; i < thumbsToActivate; i += 1) {
-        if (thumbsSwiper.slides[swiper.realIndex + i]) {
-          thumbsSwiper.slides[swiper.realIndex + i].classList.add(thumbActiveClass);
-        }
-      }
-    }
-    const autoScrollOffset = swiper.params.thumbs.autoScrollOffset;
-    const useOffset = autoScrollOffset && !thumbsSwiper.params.loop;
-    if (swiper.realIndex !== thumbsSwiper.realIndex || useOffset) {
-      const currentThumbsIndex = thumbsSwiper.activeIndex;
-      let newThumbsIndex;
-      let direction;
-      if (thumbsSwiper.params.loop) {
-        const newThumbsSlide = thumbsSwiper.slides.find((slideEl) => slideEl.getAttribute("data-swiper-slide-index") === `${swiper.realIndex}`);
-        newThumbsIndex = thumbsSwiper.slides.indexOf(newThumbsSlide);
-        direction = swiper.activeIndex > swiper.previousIndex ? "next" : "prev";
-      } else {
-        newThumbsIndex = swiper.realIndex;
-        direction = newThumbsIndex > swiper.previousIndex ? "next" : "prev";
-      }
-      if (useOffset) {
-        newThumbsIndex += direction === "next" ? autoScrollOffset : -1 * autoScrollOffset;
-      }
-      if (thumbsSwiper.visibleSlidesIndexes && thumbsSwiper.visibleSlidesIndexes.indexOf(newThumbsIndex) < 0) {
-        if (thumbsSwiper.params.centeredSlides) {
-          if (newThumbsIndex > currentThumbsIndex) {
-            newThumbsIndex = newThumbsIndex - Math.floor(slidesPerView / 2) + 1;
-          } else {
-            newThumbsIndex = newThumbsIndex + Math.floor(slidesPerView / 2) - 1;
-          }
-        } else if (newThumbsIndex > currentThumbsIndex && thumbsSwiper.params.slidesPerGroup === 1) ;
-        thumbsSwiper.slideTo(newThumbsIndex, initial ? 0 : void 0);
-      }
-    }
-  }
-  on("beforeInit", () => {
-    const {
-      thumbs
-    } = swiper.params;
-    if (!thumbs || !thumbs.swiper) return;
-    if (typeof thumbs.swiper === "string" || thumbs.swiper instanceof HTMLElement) {
-      const document2 = getDocument();
-      const getThumbsElementAndInit = () => {
-        const thumbsElement = typeof thumbs.swiper === "string" ? document2.querySelector(thumbs.swiper) : thumbs.swiper;
-        if (thumbsElement && thumbsElement.swiper) {
-          thumbs.swiper = thumbsElement.swiper;
-          init();
-          update2(true);
-        } else if (thumbsElement) {
-          const eventName = `${swiper.params.eventsPrefix}init`;
-          const onThumbsSwiper = (e) => {
-            thumbs.swiper = e.detail[0];
-            thumbsElement.removeEventListener(eventName, onThumbsSwiper);
-            init();
-            update2(true);
-            thumbs.swiper.update();
-            swiper.update();
-          };
-          thumbsElement.addEventListener(eventName, onThumbsSwiper);
-        }
-        return thumbsElement;
-      };
-      const watchForThumbsToAppear = () => {
-        if (swiper.destroyed) return;
-        const thumbsElement = getThumbsElementAndInit();
-        if (!thumbsElement) {
-          requestAnimationFrame(watchForThumbsToAppear);
-        }
-      };
-      requestAnimationFrame(watchForThumbsToAppear);
-    } else {
-      init();
-      update2(true);
-    }
-  });
-  on("slideChange update resize observerUpdate", () => {
-    update2();
-  });
-  on("setTransition", (_s, duration) => {
-    const thumbsSwiper = swiper.thumbs.swiper;
-    if (!thumbsSwiper || thumbsSwiper.destroyed) return;
-    thumbsSwiper.setTransition(duration);
-  });
-  on("beforeDestroy", () => {
-    const thumbsSwiper = swiper.thumbs.swiper;
-    if (!thumbsSwiper || thumbsSwiper.destroyed) return;
-    if (swiperCreated) {
-      thumbsSwiper.destroy();
-    }
-  });
-  Object.assign(swiper.thumbs, {
-    init,
-    update: update2
-  });
-}
 function initSliders() {
+  if (!document.querySelector("[data-fls-slider]")) return;
   if (document.querySelector(".reviews__slider")) {
     new Swiper(".reviews__slider", {
       // <- Вказуємо склас потрібного слайдера
@@ -4595,39 +4406,33 @@ function initSliders() {
       on: {}
     });
   }
-  if (document.querySelector(".product__slider")) {
-    let productThumsSlider = new Swiper(".product-thumbs__slider", {
-      modules: [],
-      observer: true,
-      observeParents: true,
-      slidesPerView: 3.2,
-      spaceBetween: 10,
-      speed: 800,
-      freeMode: true,
-      watchSlidesProgress: true,
-      lazy: true,
-      breakpoints: {
-        600: {
-          slidesPerView: 4.3,
-          spaceBetween: 20
-        },
-        768: {
-          slidesPerView: 4,
-          spaceBetween: 24
-        }
-      }
-    });
-    new Swiper(".product__slider", {
-      modules: [Thumb],
-      observer: true,
-      observeParents: true,
-      slidesPerView: 1,
-      speed: 800,
-      lazy: true,
-      thumbs: {
-        swiper: productThumsSlider
-      }
-    });
+  initProductSwiper();
+}
+let productSwiper;
+let isProductSwiperActive = false;
+function initProductSwiper() {
+  const isMobile = window.innerWidth < 767.98;
+  if (isMobile && !isProductSwiperActive) {
+    const productEl = document.querySelector(".product__slider");
+    if (productEl) {
+      productSwiper = new Swiper(productEl, {
+        modules: [],
+        observer: true,
+        observeParents: true,
+        slidesPerView: 1.1,
+        spaceBetween: 20,
+        speed: 800,
+        lazy: true
+      });
+      isProductSwiperActive = true;
+    }
+  } else if (!isMobile && isProductSwiperActive) {
+    productSwiper.destroy(true, true);
+    productSwiper = void 0;
+    isProductSwiperActive = false;
   }
 }
-document.querySelector("[data-fls-slider]") ? window.addEventListener("load", initSliders) : null;
+window.addEventListener("load", () => {
+  initSliders();
+  window.addEventListener("resize", initProductSwiper);
+});

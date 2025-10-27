@@ -5,11 +5,13 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="shortcut icon" href="./assets/img/favicon.ico">
 		<title>Product Page</title>
-		<script type="module" crossorigin="" src="./js/app.min.js?v=1760882254117"></script>
-		<script type="module" crossorigin="" src="./js/slider.min.js?v=1760882254117"></script>
-		<link rel="stylesheet" crossorigin="" href="./css/app.min.css?v=1760882254117">
-		<link rel="stylesheet" crossorigin="" href="./css/slider.min.css?v=1760882254117">
-		<link rel="stylesheet" crossorigin="" href="./css/product.min.css?v=1760882254117">
+		<script type="module" crossorigin="" src="./js/product.min.js?v=1761555382394"></script>
+		<link rel="modulepreload" crossorigin="" href="./js/app.min.js">
+		<link rel="modulepreload" crossorigin="" href="./js/slider.min.js">
+		<link rel="stylesheet" crossorigin="" href="./css/app.min.css?v=1761555382394">
+		<link rel="stylesheet" crossorigin="" href="./css/slider.min.css?v=1761555382394">
+		<link rel="stylesheet" crossorigin="" href="./css/product.min.css?v=1761555382394">
+		<link rel="stylesheet" crossorigin="" href="./css/button.min.css?v=1761555382394">
 	</head>
 	<body>
 		<div class="wrapper">
@@ -65,7 +67,7 @@
 -->
 					<div data-fls-dynamic=".header__container, 768, 1" class="header__right">
 						<a href="#" class="header__cart --icon-cart">
-							<span class="" data-fls-addtocart=""></span>
+							<span class="cart-count"></span>
 						</a>
 						<ul class="header__langlist">
 							<li class="header__langitem">
@@ -95,115 +97,62 @@
 				</div>
 				<section data-fls-addtocart-product="" class="product">
 					<div class="product__container">
-						<div class="product__sliders" data-fls-dynamic=".product__main,767.98,3">
-							<div data-fls-slider="" class="product__slider swiper">
-								<div class="product__wrapper swiper-wrapper">
-									<div class="product__slide swiper-slide">
-										<picture>
-											<source media="(max-width: 600px)" srcset="./assets/img/home/hero_bg-600.webp" type="image/webp">
-											<source media="(max-width: 1200px)" srcset="./assets/img/home/hero_bg-1200.webp" type="image/webp">
-											<img data-fls-addtocart-image="" alt="Image" src="./assets/img/home/hero_bg.webp">
-										</picture>
-									</div>
-									<div class="product__slide swiper-slide">
-										<picture>
-											<source media="(max-width: 600px)" srcset="./assets/img/home/card-600.webp" type="image/webp">
-											<img alt="Image" src="./assets/img/home/card.webp">
-										</picture>
-									</div>
-									<div class="product__slide swiper-slide">
-										<picture>
-											<source media="(max-width: 600px)" srcset="./assets/img/home/blog-600.webp" type="image/webp">
-											<source media="(max-width: 1200px)" srcset="./assets/img/home/blog-1200.webp" type="image/webp">
-											<img alt="Image" src="./assets/img/home/blog.webp">
-										</picture>
-									</div>
-									<div class="product__slide swiper-slide">
-										<picture>
-											<source media="(max-width: 600px)" srcset="./assets/img/home/author-600.webp" type="image/webp">
-											<img alt="Image" src="./assets/img/home/author.webp">
-										</picture>
-									</div>
-									<div class="product__slide swiper-slide">
-										<picture>
-											<source media="(max-width: 600px)" srcset="./assets/img/home/card-600.webp" type="image/webp">
-											<img alt="Image" src="./assets/img/home/card.webp">
-										</picture>
-									</div>
-									<div class="product__slide swiper-slide">
-										<picture>
-											<source media="(max-width: 600px)" srcset="./assets/img/home/blog-600.webp" type="image/webp">
-											<source media="(max-width: 1200px)" srcset="./assets/img/home/blog-1200.webp" type="image/webp">
-											<img alt="Image" src="./assets/img/home/blog.webp">
-										</picture>
-									</div>
+						<div data-fls-slider="" class="product__slider swiper" data-fls-dynamic=".product__main,767.98,3">
+							<div class="product__wrapper swiper-wrapper">
+								<div class="product__slide swiper-slide">
+									<picture>
+										<source media="(max-width: 600px)" srcset="./assets/img/home/hero_bg-600.webp" type="image/webp">
+										<source media="(max-width: 1200px)" srcset="./assets/img/home/hero_bg-1200.webp" type="image/webp">
+										<img data-fls-addtocart-image="" alt="Image" src="./assets/img/home/hero_bg.webp">
+									</picture>
 								</div>
-							</div>
-							<div thumbsslider="" class="product-thumbs__slider swiper">
-								<div class="product-thumbs__wrapper swiper-wrapper">
-									<div class="product-thumbs__slide swiper-slide">
-										<picture>
-											<source media="(max-width: 600px)" srcset="./assets/img/home/hero_bg-600.webp" type="image/webp">
-											<source media="(max-width: 1200px)" srcset="./assets/img/home/hero_bg-1200.webp" type="image/webp">
-											<img alt="Image" src="./assets/img/home/hero_bg.webp">
-										</picture>
-									</div>
-									<div class="product-thumbs__slide swiper-slide">
-										<picture>
-											<source media="(max-width: 600px)" srcset="./assets/img/home/card-600.webp" type="image/webp">
-											<img alt="Image" src="./assets/img/home/card.webp">
-										</picture>
-									</div>
-									<div class="product-thumbs__slide swiper-slide">
-										<picture>
-											<source media="(max-width: 600px)" srcset="./assets/img/home/blog-600.webp" type="image/webp">
-											<source media="(max-width: 1200px)" srcset="./assets/img/home/blog-1200.webp" type="image/webp">
-											<img alt="Image" src="./assets/img/home/blog.webp">
-										</picture>
-									</div>
-									<div class="product-thumbs__slide swiper-slide">
-										<picture>
-											<source media="(max-width: 600px)" srcset="./assets/img/home/author-600.webp" type="image/webp">
-											<img alt="Image" src="./assets/img/home/author.webp">
-										</picture>
-									</div>
-									<div class="product-thumbs__slide swiper-slide">
-										<picture>
-											<source media="(max-width: 600px)" srcset="./assets/img/home/card-600.webp" type="image/webp">
-											<img alt="Image" src="./assets/img/home/card.webp">
-										</picture>
-									</div>
-									<div class="product-thumbs__slide swiper-slide">
-										<picture>
-											<source media="(max-width: 600px)" srcset="./assets/img/home/blog-600.webp" type="image/webp">
-											<source media="(max-width: 1200px)" srcset="./assets/img/home/blog-1200.webp" type="image/webp">
-											<img alt="Image" src="./assets/img/home/blog.webp">
-										</picture>
-									</div>
+								<div class="product__slide swiper-slide">
+									<picture>
+										<source media="(max-width: 600px)" srcset="./assets/img/home/card-600.webp" type="image/webp">
+										<img alt="Image" src="./assets/img/home/card.webp">
+									</picture>
+								</div>
+								<div class="product__slide swiper-slide">
+									<picture>
+										<source media="(max-width: 600px)" srcset="./assets/img/home/blog-600.webp" type="image/webp">
+										<source media="(max-width: 1200px)" srcset="./assets/img/home/blog-1200.webp" type="image/webp">
+										<img alt="Image" src="./assets/img/home/blog.webp">
+									</picture>
+								</div>
+								<div class="product__slide swiper-slide">
+									<picture>
+										<source media="(max-width: 600px)" srcset="./assets/img/home/author-600.webp" type="image/webp">
+										<img alt="Image" src="./assets/img/home/author.webp">
+									</picture>
+								</div>
+								<div class="product__slide swiper-slide">
+									<picture>
+										<source media="(max-width: 600px)" srcset="./assets/img/home/card-600.webp" type="image/webp">
+										<img alt="Image" src="./assets/img/home/card.webp">
+									</picture>
+								</div>
+								<div class="product__slide swiper-slide">
+									<picture>
+										<source media="(max-width: 600px)" srcset="./assets/img/home/blog-600.webp" type="image/webp">
+										<source media="(max-width: 1200px)" srcset="./assets/img/home/blog-1200.webp" type="image/webp">
+										<img alt="Image" src="./assets/img/home/blog.webp">
+									</picture>
 								</div>
 							</div>
 						</div>
 						<div class="product__main">
 							<h1 class="product__title">Юбилейный сюрприз</h1>
 							<div class="product__description">
-								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-							</div>
-							<div class="product__footer">
-								<div class="product__price">$ 55</div>
-								<button data-fls-addtocart-button="" data-fls-button="" type="button" class="product__button button">add to cart</button>
-							</div>
-							<div class="product__body text">
-								<h2>Опис</h2>
 								<p>
 									Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ex beatae dolor expedita cum fugiat in quibusdam obcaecati, cumque harum saepe asperiores, a, at fuga ratione commodi veniam officia iusto tempore?
 								</p>
-								<p>
-									Amet, corrupti similique quaerat aspernatur excepturi quam earum vero vitae corporis ratione illum delectus qui ab debitis a quasi odit consequatur non temporibus, incidunt, obcaecati assumenda perspiciatis accusantium illo? Qui!
-								</p>
-								<p>
-									Temporibus, doloribus deleniti ipsum culpa, ullam dolorem nam rem optio laudantium minus magni. Iste sunt sed qui tempora porro beatae, ab unde nihil nesciunt, consectetur asperiores dolores! Est, atque a!
-								</p>
-								<h2>Характеристики</h2>
+							</div>
+							<div class="product__footer">
+								<div class="product__price">$ 55</div>
+								<button data-fls-button="" type="button" class="product__button button add-to-cart" data-id="3814" data-title="Печать ночі" data-price="790" data-img="assets/img/home/hero_bg.png">add to cart</button>
+							</div>
+							<div class="product__body text">
+								<h2>Details</h2>
 								<p>
 									Amet, corrupti similique quaerat aspernatur excepturi quam earum vero vitae corporis ratione illum delectus qui ab debitis a quasi odit consequatur non temporibus, incidunt, obcaecati assumenda perspiciatis accusantium illo? Qui!
 								</p>
@@ -286,6 +235,15 @@
 					</div>
 				</section>
 			</main>
+			<div class="product__toast toast">
+				<div class="toast__content">
+					<span class="toast__title">✅ Добавлено в корзину</span>
+					<div class="toast__actions">
+						<a href="/cart.html" class="toast__button button button--transparent button--small">Перейти в корзину</a>
+						<button id="toast-close" class="toast__button button button--transparent button--small">Продолжить покупки</button>
+					</div>
+				</div>
+			</div>
 			<footer data-fls-footer="" class="footer">
 				<div class="footer__container">
 					<div class="footer__body">
@@ -332,7 +290,7 @@
 								<summary class="spollers__title">
 									<h5 class="nav__footer-title">Помощь</h5>
 								</summary>
-								<div class="spollers__body">
+								<div class="nav__footer-body spollers__body">
 									<ul class="nav__footer-list">
 										<li class="nav__footer-item">
 											<a href="#" class="nav__footer-link">Вопросы и ответы</a>
