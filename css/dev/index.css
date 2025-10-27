@@ -188,7 +188,7 @@
   padding-inline: 0.9375rem;
 }
 .reviews__slider-button-next, .reviews__slider-button-prev {
-  display: none;
+  display: none !important;
 }
 .reviews__slider-button-next {
   right: 1.875rem;
