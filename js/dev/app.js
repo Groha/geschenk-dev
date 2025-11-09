@@ -322,9 +322,18 @@ function saveCart(cart) {
 }
 function updateCartCount() {
   const cart = getCart();
-  const count = cart.reduce((sum, item) => sum + item.qty, "");
+  const count = cart.reduce((sum, item) => {
+    const q = Number(item.qty || 0);
+    return sum + (Number.isFinite(q) ? q : 0);
+  }, 0);
   const counter = document.querySelector(".cart-count");
-  if (counter) counter.textContent = count;
+  if (counter) {
+    if (count > 0) {
+      counter.textContent = count;
+    } else {
+      counter.textContent = "";
+    }
+  }
 }
 document.addEventListener("DOMContentLoaded", updateCartCount);
 class DynamicAdapt {

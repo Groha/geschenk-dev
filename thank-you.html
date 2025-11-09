@@ -4,13 +4,10 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="shortcut icon" href="./assets/img/favicon.ico">
-		<title>Checkout</title>
-		<script type="module" crossorigin="" src="./js/checkout.min.js?v=1762687085772"></script>
-		<link rel="modulepreload" crossorigin="" href="./js/app.min.js">
-		<link rel="modulepreload" crossorigin="" href="./js/form.min.js">
-		<link rel="stylesheet" crossorigin="" href="./css/app.min.css?v=1762687085772">
-		<link rel="stylesheet" crossorigin="" href="./css/form.min.css?v=1762687085772">
-		<link rel="stylesheet" crossorigin="" href="./css/checkout.min.css?v=1762687085772">
+		<title>Thank you page</title>
+		<script type="module" crossorigin="" src="./js/app.min.js?v=1762687085769"></script>
+		<link rel="stylesheet" crossorigin="" href="./css/app.min.css?v=1762687085769">
+		<link rel="stylesheet" crossorigin="" href="./css/thank-you.min.css?v=1762687085769">
 	</head>
 	<body>
 		<div class="wrapper">
@@ -82,47 +79,20 @@
 					</div>
 				</div>
 			</header>
-			<main class="page page--checkout">
-				<div class="checkout">
-					<div class="checkout__container">
-						<h1 class="checkout__title">Оформление заказа</h1>
-						<div class="checkout__cart">
-							<h2>Ваши товары</h2>
-							<ul class="checkout__items"></ul>
-							<div class="checkout__summary">
-								<p>
-									Количество товаров:
-									<span class="checkout__subtotal">0 шт.</span>
-								</p>
-								<p>
-									Итого:
-									<span class="checkout__total">0 ₴</span>
-								</p>
-							</div>
+			<main class="page page--thankyou">
+				<section class="thankyou">
+					<div class="thankyou__container">
+						<h1 class="thank-you__title title">Дякуємо за ваше замовлення!</h1>
+						<div class="thank-you__text text">
+							<p>
+								Ми отримали ваше замовлення і вже розпочали його обробку.
+								<br>
+								Наш менеджер зв'яжеться з вами найближчим часом.
+							</p>
 						</div>
-						<form data-fls-form="" data-fls-form-validatenow="" data-fls-form-popup="popup" class="checkout__form form">
-							<h2 class="form__title">Ваши данные</h2>
-							<div class="form-field">
-								<input type="text" name="form[name]" required placeholder="" data-fls-form-errtext="Error" class="form__input input">
-								<label>Имя</label>
-							</div>
-							<div class="form-field">
-								<input type="tel" name="form[phone]" required placeholder="" data-fls-form-errtext="Error" class="form__input input">
-								<label>Телефон</label>
-							</div>
-							<div class="form-field">
-								<input type="email" name="form[email]" required placeholder="" data-fls-form-errtext="Error" class="form__input input">
-								<label>E-mail</label>
-							</div>
-							<div class="form-field">
-								<textarea name="form[address]" required placeholder="" data-fls-form-errtext="Error" class="form__input input"></textarea>
-								<label class="form__label">Адрес</label>
-							</div>
-							<button data-fls-button="" type="submit" class="form__button button">Оформить заказ</button>
-						</form>
-						<!-- <div class="checkout__message"></div> -->
+						<a href="/" data-fls-button="" class="thank-you__button button">Повернутися на головну</a>
 					</div>
-				</div>
+				</section>
 			</main>
 			<footer data-fls-footer="" class="footer">
 				<div class="footer__container">

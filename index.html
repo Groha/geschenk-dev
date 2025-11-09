@@ -5,13 +5,14 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="shortcut icon" href="./assets/img/favicon.ico">
 		<title>Home Page</title>
-		<script type="module" crossorigin="" src="./js/index.min.js?v=1761567421722"></script>
+		<script type="module" crossorigin="" src="./js/index.min.js?v=1762687085774"></script>
 		<link rel="modulepreload" crossorigin="" href="./js/app.min.js">
 		<link rel="modulepreload" crossorigin="" href="./js/slider.min.js">
-		<link rel="stylesheet" crossorigin="" href="./css/app.min.css?v=1761567421722">
-		<link rel="stylesheet" crossorigin="" href="./css/slider.min.css?v=1761567421722">
-		<link rel="stylesheet" crossorigin="" href="./css/index.min.css?v=1761567421722">
-		<link rel="stylesheet" crossorigin="" href="./css/button.min.css?v=1761567421722">
+		<link rel="modulepreload" crossorigin="" href="./js/form.min.js">
+		<link rel="stylesheet" crossorigin="" href="./css/app.min.css?v=1762687085774">
+		<link rel="stylesheet" crossorigin="" href="./css/slider.min.css?v=1762687085774">
+		<link rel="stylesheet" crossorigin="" href="./css/form.min.css?v=1762687085774">
+		<link rel="stylesheet" crossorigin="" href="./css/index.min.css?v=1762687085774">
 	</head>
 	<body>
 		<div class="wrapper">
@@ -431,11 +432,20 @@
 						<!-- <form action="" class="faq__form"></form> -->
 						<form data-fls-form="ajax" data-fls-form-popup="popup" method="POST" action="/sendmail" class="faq__form form">
 							<h5 class="form__title">Залишились питання?</h5>
-							<input required type="text" name="form[text]" data-fls-form-errtext="Error" placeholder="Name" class="form__input input">
-							<input required type="phone" name="form[phone]" data-fls-form-errtext="Error" placeholder="Phone" class="form__input input">
-							<input required type="email" name="form[email]" data-fls-form-errtext="Error" placeholder="E-mail" class="form__input input">
+							<div class="form-field">
+								<input type="text" name="form[name]" required placeholder="" data-fls-form-errtext="Error" class="form__input input">
+								<label>Имя</label>
+							</div>
+							<div class="form-field">
+								<input type="tel" name="form[phone]" required placeholder="" data-fls-form-errtext="Error" class="form__input input">
+								<label>Телефон</label>
+							</div>
+							<div class="form-field">
+								<input type="email" name="form[email]" required placeholder="" data-fls-form-errtext="Error" class="form__input input">
+								<label>E-mail</label>
+							</div>
 							<span class="form__info">*Натискаючи на кнопку, Ви даэте згоду на обробку Ваших персональних даних.</span>
-							<button type="submit" class="form__button button">Напишiть менi!</button>
+							<button data-fls-button="" type="submit" class="form__button button">Напишiть менi!</button>
 						</form>
 					</div>
 				</section>

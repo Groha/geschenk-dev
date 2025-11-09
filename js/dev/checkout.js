@@ -1,4 +1,5 @@
-import { g as getCart, s as saveCart } from "./app.min.js";
+import { g as getCart, a as gotoBlock, s as saveCart } from "./app.min.js";
+import { f as formValidate } from "./form.min.js";
 const cart = getCart();
 if (!cart.length) {
   alert("Ваша корзина пуста! Добавьте товары перед оформлением заказа.");
@@ -11,8 +12,8 @@ function renderCheckoutCart() {
   let totalQty = 0;
   let totalSum = 0;
   cart2.forEach((item) => {
-    totalQty += item.qty;
-    totalSum += item.qty * item.price;
+    totalQty += Number(item.qty);
+    totalSum += Number(item.qty) * Number(item.price);
     list.innerHTML += `
       <li class="checkout-item" data-id="${item.id}">
         ${item.title} — ${item.qty} шт. — ${item.price * item.qty} ₴
@@ -22,22 +23,32 @@ function renderCheckoutCart() {
   document.querySelector(".checkout__subtotal").textContent = `${totalQty} шт.`;
   document.querySelector(".checkout__total").textContent = `${totalSum} ₴`;
 }
-const form = document.querySelector(".checkout__form");
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const cart2 = getCart();
-  if (!cart2.length) {
-    alert("Корзина пуста!");
-    return;
-  }
-  const formData = new FormData(form);
-  const data = {
-    cart: cart2,
-    customer: Object.fromEntries(formData.entries())
-  };
-  console.log("Данные для отправки:", data);
-  document.querySelector(".checkout__message").textContent = "Спасибо! Ваш заказ принят.";
-  saveCart([]);
-  renderCheckoutCart();
-});
+function initCheckoutForm() {
+  const form = document.querySelector(".checkout__form");
+  if (!form) return;
+  form.setAttribute("novalidate", true);
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const errors = formValidate.getErrors(form);
+    if (errors > 0) {
+      if (form.hasAttribute("data-fls-form-gotoerr")) {
+        const selector = form.dataset.flsFormGotoerr || ".--form-error";
+        gotoBlock(selector);
+      }
+      return;
+    }
+    const formData = new FormData(form);
+    const data = {
+      cart: getCart(),
+      customer: Object.fromEntries(formData.entries())
+    };
+    console.log("Данные для отправки:", data);
+    document.querySelector(".checkout__message").textContent = "Спасибо! Ваш заказ принят.";
+    formValidate.formClean(form);
+    saveCart([]);
+    renderCheckoutCart();
+    window.location.href = "/thank-you.html";
+  });
+}
 renderCheckoutCart();
+initCheckoutForm();

@@ -1,5 +1,4 @@
 import { u as updateCartCount, g as getCart, s as saveCart } from "./app.min.js";
-/* empty css           */
 let isFirstRender = true;
 function renderCart() {
   const cart = getCart();
