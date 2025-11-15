@@ -1,23 +1,24 @@
 <!doctype html>
 <html lang="en">
 	<head>
+		<style data-fls-preloader="false" rel="preload">
+			body > *:not(.fls-preloader) {opacity: 0;visibility: hidden;}[data-fls-preloader-loaded] body > *:not(.fls-preloader) {transition: opacity 0.5s ease 0s;opacity: 1;visibility: visible;}
+		</style>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="shortcut icon" href="./assets/img/favicon.ico">
 		<title>Thank you page</title>
-		<script type="module" crossorigin="" src="./js/app.min.js?v=1762687085769"></script>
-		<link rel="stylesheet" crossorigin="" href="./css/app.min.css?v=1762687085769">
-		<link rel="stylesheet" crossorigin="" href="./css/thank-you.min.css?v=1762687085769">
+		<script type="module" crossorigin="" src="./js/app.min.js?v=1763218288125"></script>
+		<link rel="stylesheet" crossorigin="" href="./css/app.min.css?v=1763218288125">
+		<link rel="stylesheet" crossorigin="" href="./css/thank-you.min.css?v=1763218288125">
 	</head>
-	<body>
+	<body class="">
 		<div class="wrapper">
-			<header data-fls-header="" class="header">
+			<header data-fls-header="" data-fls-header-scroll="50" data-fls-header-scroll-show="" class="header">
 				<div class="header__container">
-					<a href="https://groha.github.io/geschenk-dev/" class="header__logo-link">
+					<a href="/" class="header__logo-link">
 						<picture>
-							<picture>
-								<img alt="Logo" class="header__logo" src="./assets/img/logo.webp">
-							</picture>
+							<img src="./assets/img/logo.svg" alt="Logo" class="header__logo">
 						</picture>
 					</a>
 					<div class="header__menu menu">
@@ -62,7 +63,7 @@
 </fetch>
 -->
 					<div data-fls-dynamic=".header__container, 768, 1" class="header__right">
-						<a href="https://groha.github.io/geschenk-dev/cart" class="header__cart --icon-cart">
+						<a href="/cart.html" class="header__cart --icon-cart">
 							<span class="cart-count"></span>
 						</a>
 						<ul class="header__langlist">
@@ -90,7 +91,7 @@
 								Наш менеджер зв'яжеться з вами найближчим часом.
 							</p>
 						</div>
-						<a href="https://groha.github.io/geschenk-dev/" data-fls-button="" class="thank-you__button button">Повернутися на головну</a>
+						<a href="/" data-fls-button="" class="thank-you__button button">Повернутися на головну</a>
 					</div>
 				</section>
 			</main>
@@ -99,9 +100,7 @@
 					<div class="footer__body">
 						<div class="footer__info">
 							<picture>
-								<picture>
-									<img alt="Logo" class="footer__logo" src="./assets/img/logo.webp">
-								</picture>
+								<img src="./assets/img/logo.svg" alt="Logo" class="footer__logo">
 							</picture>
 							<div class="footer__text">
 								<p>

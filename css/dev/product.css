@@ -23,8 +23,8 @@
   display: block;
   width: 100%;
   aspect-ratio: 1;
-  border: 0.0625rem solid rgba(251, 251, 251, 0.5098039216);
-  background-color: #fbfbfb;
+  border: 0.0625rem solid var(--border-color);
+  background-color: var(--second-color);
 }
 .product__slide img {
   width: 100%;
@@ -242,6 +242,6 @@
 }
 @media (any-hover: hover) {
   .breadcrumb__link:hover {
-    color: #FFD68B;
+    color: var(--gold-color);
   }
 }

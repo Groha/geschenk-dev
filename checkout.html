@@ -1,26 +1,27 @@
 <!doctype html>
 <html lang="en">
 	<head>
+		<style data-fls-preloader="false" rel="preload">
+			body > *:not(.fls-preloader) {opacity: 0;visibility: hidden;}[data-fls-preloader-loaded] body > *:not(.fls-preloader) {transition: opacity 0.5s ease 0s;opacity: 1;visibility: visible;}
+		</style>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="shortcut icon" href="./assets/img/favicon.ico">
 		<title>Checkout</title>
-		<script type="module" crossorigin="" src="./js/checkout.min.js?v=1762687085772"></script>
+		<script type="module" crossorigin="" src="./js/checkout.min.js?v=1763218288124"></script>
 		<link rel="modulepreload" crossorigin="" href="./js/app.min.js">
 		<link rel="modulepreload" crossorigin="" href="./js/form.min.js">
-		<link rel="stylesheet" crossorigin="" href="./css/app.min.css?v=1762687085772">
-		<link rel="stylesheet" crossorigin="" href="./css/form.min.css?v=1762687085772">
-		<link rel="stylesheet" crossorigin="" href="./css/checkout.min.css?v=1762687085772">
+		<link rel="stylesheet" crossorigin="" href="./css/app.min.css?v=1763218288124">
+		<link rel="stylesheet" crossorigin="" href="./css/form.min.css?v=1763218288124">
+		<link rel="stylesheet" crossorigin="" href="./css/checkout.min.css?v=1763218288124">
 	</head>
-	<body>
+	<body class="">
 		<div class="wrapper">
-			<header data-fls-header="" class="header">
+			<header data-fls-header="" data-fls-header-scroll="50" data-fls-header-scroll-show="" class="header">
 				<div class="header__container">
-					<a href="https://groha.github.io/geschenk-dev/" class="header__logo-link">
+					<a href="/" class="header__logo-link">
 						<picture>
-							<picture>
-								<img alt="Logo" class="header__logo" src="./assets/img/logo.webp">
-							</picture>
+							<img src="./assets/img/logo.svg" alt="Logo" class="header__logo">
 						</picture>
 					</a>
 					<div class="header__menu menu">
@@ -58,8 +59,14 @@
 							</ul>
 						</nav>
 					</div>
+					<!--
+<fetch url="@components/layout/menu/menu.json">
+<each loop='item in response'>
+</each>
+</fetch>
+-->
 					<div data-fls-dynamic=".header__container, 768, 1" class="header__right">
-						<a href="https://groha.github.io/geschenk-dev/cart" class="header__cart --icon-cart">
+						<a href="/cart.html" class="header__cart --icon-cart">
 							<span class="cart-count"></span>
 						</a>
 						<ul class="header__langlist">
@@ -123,9 +130,7 @@
 					<div class="footer__body">
 						<div class="footer__info">
 							<picture>
-								<picture>
-									<img alt="Logo" class="footer__logo" src="./assets/img/logo.webp">
-								</picture>
+								<img src="./assets/img/logo.svg" alt="Logo" class="footer__logo">
 							</picture>
 							<div class="footer__text">
 								<p>

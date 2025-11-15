@@ -1,28 +1,29 @@
 <!doctype html>
 <html lang="en">
 	<head>
+		<style data-fls-preloader="false" rel="preload">
+			body > *:not(.fls-preloader) {opacity: 0;visibility: hidden;}[data-fls-preloader-loaded] body > *:not(.fls-preloader) {transition: opacity 0.5s ease 0s;opacity: 1;visibility: visible;}
+		</style>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="shortcut icon" href="./assets/img/favicon.ico">
 		<title>Home Page</title>
-		<script type="module" crossorigin="" src="./js/index.min.js?v=1762687085774"></script>
+		<script type="module" crossorigin="" src="./js/index.min.js?v=1763218288125"></script>
 		<link rel="modulepreload" crossorigin="" href="./js/app.min.js">
 		<link rel="modulepreload" crossorigin="" href="./js/slider.min.js">
 		<link rel="modulepreload" crossorigin="" href="./js/form.min.js">
-		<link rel="stylesheet" crossorigin="" href="./css/app.min.css?v=1762687085774">
-		<link rel="stylesheet" crossorigin="" href="./css/slider.min.css?v=1762687085774">
-		<link rel="stylesheet" crossorigin="" href="./css/form.min.css?v=1762687085774">
-		<link rel="stylesheet" crossorigin="" href="./css/index.min.css?v=1762687085774">
+		<link rel="stylesheet" crossorigin="" href="./css/app.min.css?v=1763218288125">
+		<link rel="stylesheet" crossorigin="" href="./css/slider.min.css?v=1763218288125">
+		<link rel="stylesheet" crossorigin="" href="./css/form.min.css?v=1763218288125">
+		<link rel="stylesheet" crossorigin="" href="./css/index.min.css?v=1763218288125">
 	</head>
-	<body>
+	<body class="">
 		<div class="wrapper">
-			<header data-fls-header="" class="header">
+			<header data-fls-header="" data-fls-header-scroll="50" data-fls-header-scroll-show="" class="header">
 				<div class="header__container">
-					<a href="https://groha.github.io/geschenk-dev/" class="header__logo-link">
+					<a href="/" class="header__logo-link">
 						<picture>
-							<picture>
-								<img alt="Logo" class="header__logo" src="./assets/img/logo.webp">
-							</picture>
+							<img src="./assets/img/logo.svg" alt="Logo" class="header__logo">
 						</picture>
 					</a>
 					<div class="header__menu menu">
@@ -60,8 +61,14 @@
 							</ul>
 						</nav>
 					</div>
+					<!--
+<fetch url="@components/layout/menu/menu.json">
+<each loop='item in response'>
+</each>
+</fetch>
+-->
 					<div data-fls-dynamic=".header__container, 768, 1" class="header__right">
-						<a href="https://groha.github.io/geschenk-dev/cart" class="header__cart --icon-cart">
+						<a href="/cart.html" class="header__cart --icon-cart">
 							<span class="cart-count"></span>
 						</a>
 						<ul class="header__langlist">
@@ -97,7 +104,7 @@
 					<div class="popular__container">
 						<h2 class="popular__title title">Популярные наборы</h2>
 						<div class="popular__cards">
-							<a href="https://groha.github.io/geschenk-dev/product.html" class="popular__card card">
+							<a href="product.html" class="popular__card card">
 								<div class="card__image">
 									<picture>
 										<source media="(max-width: 600px)" srcset="./assets/img/home/card-600.webp" type="image/webp">
@@ -113,7 +120,7 @@
 									</div>
 								</div>
 							</a>
-							<a href="https://groha.github.io/geschenk-dev/product.html" class="popular__card card">
+							<a href="product.html" class="popular__card card">
 								<div class="card__image">
 									<picture>
 										<source media="(max-width: 600px)" srcset="./assets/img/home/card-600.webp" type="image/webp">
@@ -129,7 +136,7 @@
 									</div>
 								</div>
 							</a>
-							<a href="https://groha.github.io/geschenk-dev/product.html" class="popular__card card">
+							<a href="product.html" class="popular__card card">
 								<div class="card__image">
 									<picture>
 										<source media="(max-width: 600px)" srcset="./assets/img/home/card-600.webp" type="image/webp">
@@ -145,7 +152,7 @@
 									</div>
 								</div>
 							</a>
-							<a href="https://groha.github.io/geschenk-dev/product.html" class="popular__card card">
+							<a href="product.html" class="popular__card card">
 								<div class="card__image">
 									<picture>
 										<source media="(max-width: 600px)" srcset="./assets/img/home/card-600.webp" type="image/webp">
@@ -448,11 +455,9 @@
 				<div class="footer__container">
 					<div class="footer__body">
 						<div class="footer__info">
-							<a href="https://groha.github.io/geschenk-dev/">
-								<picture>
-									<img alt="Logo" class="footer__logo" src="./assets/img/logo.webp">
-								</picture>
-							</a>
+							<picture>
+								<img src="./assets/img/logo.svg" alt="Logo" class="footer__logo">
+							</picture>
 							<div class="footer__text">
 								<p>
 									Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente architecto dicta, fugit vero cupiditate cumque hic odit perferendis.

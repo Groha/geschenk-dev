@@ -43,7 +43,6 @@ function initCheckoutForm() {
       customer: Object.fromEntries(formData.entries())
     };
     console.log("Данные для отправки:", data);
-    document.querySelector(".checkout__message").textContent = "Спасибо! Ваш заказ принят.";
     formValidate.formClean(form);
     saveCart([]);
     renderCheckoutCart();
