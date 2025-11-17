@@ -44,7 +44,7 @@
   height: 70svh;
   inset: 0;
   top: auto;
-  translate: 100% 0;
+  transform: translateY(100%);
   overflow-y: auto;
   transition: transform 0.3s;
   padding-inline: 1.25rem;
@@ -54,7 +54,7 @@
   pointer-events: auto;
 }
 .filters--open .filters__panel {
-  translate: 0 0;
+  transform: translateY(0);
 }
 .filters__head, .filters__footer {
   position: sticky;
@@ -144,7 +144,10 @@
     left: auto;
     max-width: 22.5rem;
     height: 100vh;
-    translate: 0 100%;
+    transform: translateX(100%);
+  }
+  .filters--open .filters__panel {
+    transform: translateX(0);
   }
 }
 @media (min-width: 61.99875em) {
