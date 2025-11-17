@@ -179,9 +179,6 @@
 .reviews__button {
   justify-self: center;
 }
-.reviews__button::after {
-  content: "\f109";
-}
 
 .review {
   border-radius: 1.25rem;

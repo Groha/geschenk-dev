@@ -8,12 +8,12 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="shortcut icon" href="./assets/img/favicon.ico">
 		<title>Product Page</title>
-		<script type="module" crossorigin="" src="./js/product.min.js?v=1763218288126"></script>
+		<script type="module" crossorigin="" src="./js/product.min.js?v=1763386432676"></script>
 		<link rel="modulepreload" crossorigin="" href="./js/app.min.js">
 		<link rel="modulepreload" crossorigin="" href="./js/slider.min.js">
-		<link rel="stylesheet" crossorigin="" href="./css/app.min.css?v=1763218288126">
-		<link rel="stylesheet" crossorigin="" href="./css/slider.min.css?v=1763218288126">
-		<link rel="stylesheet" crossorigin="" href="./css/product.min.css?v=1763218288126">
+		<link rel="stylesheet" crossorigin="" href="./css/app.min.css?v=1763386432676">
+		<link rel="stylesheet" crossorigin="" href="./css/slider.min.css?v=1763386432676">
+		<link rel="stylesheet" crossorigin="" href="./css/product.min.css?v=1763386432676">
 	</head>
 	<body class="">
 		<div class="wrapper">
@@ -21,7 +21,10 @@
 				<div class="header__container">
 					<a href="https://groha.github.io/geschenk-dev/" class="header__logo-link">
 						<picture>
-							<img src="./assets/img/logo.svg" alt="Logo" class="header__logo">
+							<picture>
+								<source media="(max-width: 600px)" srcset="./assets/img/1-600.webp" type="image/webp">
+								<img alt="Logo" class="header__logo" src="./assets/img/1.webp">
+							</picture>
 						</picture>
 					</a>
 					<div class="header__menu menu">
@@ -31,7 +34,7 @@
 						<nav class="menu__body">
 							<ul class="menu__list">
 								<li class="menu__item">
-									<a href="#" class="menu__link">Каталог</a>
+									<a href="https://groha.github.io/geschenk-dev/products" class="menu__link menu__link--active">Каталог</a>
 								</li>
 								<li class="menu__item">
 									<a href="#" class="menu__link">Про нас</a>
@@ -87,10 +90,10 @@
 				<div class="breadcrumb">
 					<ul class="breadcrumb__container">
 						<li class="breadcrumb__item --icon-arrow-thin">
-							<a href="#" class="breadcrumb__link">Головна</a>
+							<a href="https://groha.github.io/geschenk-dev/" class="breadcrumb__link">Головна</a>
 						</li>
 						<li class="breadcrumb__item --icon-arrow-thin">
-							<a href="#" class="breadcrumb__link">Каталог</a>
+							<a href="/products.html" class="breadcrumb__link">Каталог</a>
 						</li>
 						<li class="breadcrumb__item">Юбилейный сюрприз</li>
 					</ul>
@@ -239,7 +242,7 @@
 				<div class="toast__content">
 					<span class="toast__title">✅ Добавлено в корзину</span>
 					<div class="toast__actions">
-						<a href="/cart.html" class="toast__button button button--transparent button--small">Перейти в корзину</a>
+						<a href="https://groha.github.io/geschenk-dev/cart" class="toast__button button button--transparent button--small">Перейти в корзину</a>
 						<button id="toast-close" class="toast__button button button--transparent button--small">Продолжить покупки</button>
 					</div>
 				</div>
@@ -249,7 +252,10 @@
 					<div class="footer__body">
 						<div class="footer__info">
 							<picture>
-								<img src="./assets/img/logo.svg" alt="Logo" class="footer__logo">
+								<picture>
+									<source media="(max-width: 600px)" srcset="./assets/img/1-600.webp" type="image/webp">
+									<img alt="Logo" class="footer__logo" src="./assets/img/1.webp">
+								</picture>
 							</picture>
 							<div class="footer__text">
 								<p>

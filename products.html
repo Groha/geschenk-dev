@@ -7,11 +7,11 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="shortcut icon" href="./assets/img/favicon.ico">
-		<title>Cart</title>
-		<script type="module" crossorigin="" src="./js/cart.min.js?v=1763386432675"></script>
+		<title>Products</title>
+		<script type="module" crossorigin="" src="./js/products.min.js?v=1763386432674"></script>
 		<link rel="modulepreload" crossorigin="" href="./js/app.min.js">
-		<link rel="stylesheet" crossorigin="" href="./css/app.min.css?v=1763386432675">
-		<link rel="stylesheet" crossorigin="" href="./css/cart.min.css?v=1763386432675">
+		<link rel="stylesheet" crossorigin="" href="./css/app.min.css?v=1763386432674">
+		<link rel="stylesheet" crossorigin="" href="./css/products.min.css?v=1763386432674">
 	</head>
 	<body class="">
 		<div class="wrapper">
@@ -32,7 +32,7 @@
 						<nav class="menu__body">
 							<ul class="menu__list">
 								<li class="menu__item">
-									<a href="https://groha.github.io/geschenk-dev/products" class="menu__link">Каталог</a>
+									<a href="https://groha.github.io/geschenk-dev/products" class="menu__link menu__link--active">Каталог</a>
 								</li>
 								<li class="menu__item">
 									<a href="#" class="menu__link">Про нас</a>
@@ -84,24 +84,113 @@
 					</div>
 				</div>
 			</header>
-			<main class="page page--cart">
-				<section class="cart">
-					<div class="cart__container">
-						<h1 class="cart__title">Ваш кошик</h1>
-						<div class="cart__body">
-							<div class="cart__items"></div>
-							<div class="cart__summary summary">
-								<h2 class="summary__title">Ваше замовлення</h2>
-								<div class="summary__row">
-									<span>Всего товаров:</span>
-									<span class="summary__subtotal"></span>
+			<main class="page page--products">
+				<section class="products-page">
+					<div class="products-page__container">
+						<h1 class="products-page__title">Каталог</h1>
+						<div class="products-page__body">
+							<aside class="products-page__filters filters">
+								<button class="filters__btn button button--transparent button--icon --icon-filter">Фильтры</button>
+								<div class="filters__overlay"></div>
+								<div class="filters__panel" id="filters">
+									<form class="filters__form" id="filters-form">
+										<div class="filters__head">
+											<button data-fls-button="" class="filters__reset button button--transparent button--small" type="button">Сбросить Фильтры</button>
+											<button class="filters__close" aria-label="Закрыть">✕</button>
+										</div>
+										<!-- Категории -->
+										<div data-fls-spollers="" class="spollers filters__group">
+											<details data-fls-spollers-open="" class="spollers__item filters__item">
+												<summary class="spollers__title filters__title">Категория</summary>
+												<div class="spollers__body filters__body">
+													<label class="filter-radio">
+														<input type="radio" name="category" value="all" checked>
+														<span>Все</span>
+													</label>
+													<label class="filter-radio">
+														<input type="radio" name="category" value="kids">
+														<span>Детские</span>
+													</label>
+													<label class="filter-radio">
+														<input type="radio" name="category" value="alcohol">
+														<span>С алкоголем</span>
+													</label>
+													<label class="filter-radio">
+														<input type="radio" name="category" value="bio">
+														<span>Био</span>
+													</label>
+												</div>
+											</details>
+											<!-- Размер -->
+											<details data-fls-spollers-open="" class="spollers__item filters__item">
+												<summary class="spollers__title filters__title">Размер</summary>
+												<div class="spollers__body filters__body">
+													<label class="filter-radio">
+														<input type="radio" name="size" value="all" checked>
+														<span>Все</span>
+													</label>
+													<label class="filter-radio">
+														<input type="radio" name="size" value="small">
+														<span>Маленькие</span>
+													</label>
+													<label class="filter-radio">
+														<input type="radio" name="size" value="large">
+														<span>Большие</span>
+													</label>
+												</div>
+											</details>
+											<!-- Для кого -->
+											<details data-fls-spollers-open="" class="spollers__item filters__item">
+												<summary class="spollers__title filters__title">Для кого</summary>
+												<div class="spollers__body filters__body">
+													<label class="filter-radio">
+														<input type="radio" name="gender" value="all" checked>
+														<span>Все</span>
+													</label>
+													<label class="filter-radio">
+														<input type="radio" name="gender" value="men">
+														<span>Для мужчин</span>
+													</label>
+													<label class="filter-radio">
+														<input type="radio" name="gender" value="kids">
+														<span>Детские</span>
+													</label>
+													<label class="filter-radio">
+														<input type="radio" name="gender" value="unisex">
+														<span>Унисекс</span>
+													</label>
+												</div>
+											</details>
+											<!-- Цена -->
+											<details data-fls-spollers-open="" class="spollers__item filters__item">
+												<summary class="spollers__title filters__title">Цена</summary>
+												<div class="spollers__body filters__body">
+													<label class="filter-radio">
+														<input type="radio" name="price" value="all" checked>
+														<span>Все</span>
+													</label>
+													<label class="filter-radio">
+														<input type="radio" name="price" value="low">
+														<span>До 30€</span>
+													</label>
+													<label class="filter-radio">
+														<input type="radio" name="price" value="mid">
+														<span>30–60€</span>
+													</label>
+													<label class="filter-radio">
+														<input type="radio" name="price" value="high">
+														<span>60€+</span>
+													</label>
+												</div>
+											</details>
+										</div>
+										<div class="filters__footer">
+											<button data-fls-button="" class="filters__apply button" type="submit">Применить</button>
+										</div>
+									</form>
 								</div>
-								<div class="summary__row total">
-									<span>Разом на суму:</span>
-									<span class="summary__total-sum"></span>
-								</div>
-								<a href="https://groha.github.io/geschenk-dev/checkout" data-fls-button="" class="summary__button button">ОФОРМИТИ ЗАМОВЛЕННЯ</a>
-							</div>
+							</aside>
+							<div class="products-page__cards"></div>
 						</div>
 					</div>
 				</section>

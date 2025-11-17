@@ -3,7 +3,7 @@ import { f as formValidate } from "./form.min.js";
 const cart = getCart();
 if (!cart.length) {
   alert("Ваша корзина пуста! Добавьте товары перед оформлением заказа.");
-  window.location.href = "/";
+  window.location.href = "https://groha.github.io/geschenk-dev/";
 }
 function renderCheckoutCart() {
   const cart2 = getCart();
@@ -46,7 +46,7 @@ function initCheckoutForm() {
     formValidate.formClean(form);
     saveCart([]);
     renderCheckoutCart();
-    window.location.href = "/thank-you.html";
+    window.location.href = "https://groha.github.io/geschenk-dev/thank-you";
   });
 }
 renderCheckoutCart();

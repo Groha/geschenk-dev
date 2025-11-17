@@ -8,14 +8,14 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="shortcut icon" href="./assets/img/favicon.ico">
 		<title>Home Page</title>
-		<script type="module" crossorigin="" src="./js/index.min.js?v=1763218288125"></script>
+		<script type="module" crossorigin="" src="./js/index.min.js?v=1763386432675"></script>
 		<link rel="modulepreload" crossorigin="" href="./js/app.min.js">
 		<link rel="modulepreload" crossorigin="" href="./js/slider.min.js">
 		<link rel="modulepreload" crossorigin="" href="./js/form.min.js">
-		<link rel="stylesheet" crossorigin="" href="./css/app.min.css?v=1763218288125">
-		<link rel="stylesheet" crossorigin="" href="./css/slider.min.css?v=1763218288125">
-		<link rel="stylesheet" crossorigin="" href="./css/form.min.css?v=1763218288125">
-		<link rel="stylesheet" crossorigin="" href="./css/index.min.css?v=1763218288125">
+		<link rel="stylesheet" crossorigin="" href="./css/app.min.css?v=1763386432675">
+		<link rel="stylesheet" crossorigin="" href="./css/slider.min.css?v=1763386432675">
+		<link rel="stylesheet" crossorigin="" href="./css/form.min.css?v=1763386432675">
+		<link rel="stylesheet" crossorigin="" href="./css/index.min.css?v=1763386432675">
 	</head>
 	<body class="">
 		<div class="wrapper">
@@ -23,7 +23,10 @@
 				<div class="header__container">
 					<a href="https://groha.github.io/geschenk-dev/" class="header__logo-link">
 						<picture>
-							<img src="./assets/img/logo.svg" alt="Logo" class="header__logo">
+							<picture>
+								<source media="(max-width: 600px)" srcset="./assets/img/1-600.webp" type="image/webp">
+								<img alt="Logo" class="header__logo" src="./assets/img/1.webp">
+							</picture>
 						</picture>
 					</a>
 					<div class="header__menu menu">
@@ -33,7 +36,7 @@
 						<nav class="menu__body">
 							<ul class="menu__list">
 								<li class="menu__item">
-									<a href="#" class="menu__link">Каталог</a>
+									<a href="https://groha.github.io/geschenk-dev/products" class="menu__link">Каталог</a>
 								</li>
 								<li class="menu__item">
 									<a href="#" class="menu__link">Про нас</a>
@@ -100,76 +103,86 @@
 						<img alt="Background" class="hero__bg" src="./assets/img/home/hero_bg.webp">
 					</picture>
 				</section>
-				<section class="popular">
-					<div class="popular__container">
-						<h2 class="popular__title title">Популярные наборы</h2>
-						<div class="popular__cards">
-							<a href="https://groha.github.io/geschenk-dev/product" class="popular__card card">
-								<div class="card__image">
-									<picture>
-										<source media="(max-width: 600px)" srcset="./assets/img/home/card-600.webp" type="image/webp">
-										<img alt="Card" src="./assets/img/home/card.webp">
-									</picture>
-								</div>
-								<div class="card__text">
-									<h4 class="card__title">Юбилейный сюрприз</h4>
-									<p class="card__description">Вино, кино и домино - все в лучшем виде</p>
-									<div class="card__footer">
-										<p class="card__price">$ 55</p>
-										<div class="card__button --icon-arrow"></div>
+				<section class="https://groha.github.io/geschenk-dev/products">
+					<div class="products__container">
+						<h2 class="products__title title">Популярные наборы</h2>
+						<div class="products__cards">
+							<article class="products__card card">
+								<a href="https://groha.github.io/geschenk-dev/product" class="card__link">
+									<div class="card__image">
+										<picture>
+											<source media="(max-width: 600px)" srcset="./assets/img/home/card-600.webp" type="image/webp">
+											<img alt="Card" src="./assets/img/home/card.webp">
+										</picture>
 									</div>
-								</div>
-							</a>
-							<a href="https://groha.github.io/geschenk-dev/product" class="popular__card card">
-								<div class="card__image">
-									<picture>
-										<source media="(max-width: 600px)" srcset="./assets/img/home/card-600.webp" type="image/webp">
-										<img alt="Card" src="./assets/img/home/card.webp">
-									</picture>
-								</div>
-								<div class="card__text">
-									<h4 class="card__title">Юбилейный сюрприз</h4>
-									<p class="card__description">Вино, кино и домино - все в лучшем виде</p>
-									<div class="card__footer">
-										<p class="card__price">$ 55</p>
-										<div class="card__button --icon-arrow"></div>
+									<div class="card__text">
+										<h4 class="card__title">Юбилейный сюрприз сюрприз</h4>
+										<p class="card__description">Вино, кино и домино - все в лучшем виде</p>
+										<div class="card__footer">
+											<p class="card__price">$ 55</p>
+											<div class="card__button button button--transparent button--small" role="button">kaufen</div>
+										</div>
 									</div>
-								</div>
-							</a>
-							<a href="https://groha.github.io/geschenk-dev/product" class="popular__card card">
-								<div class="card__image">
-									<picture>
-										<source media="(max-width: 600px)" srcset="./assets/img/home/card-600.webp" type="image/webp">
-										<img alt="Card" src="./assets/img/home/card.webp">
-									</picture>
-								</div>
-								<div class="card__text">
-									<h4 class="card__title">Юбилейный сюрприз</h4>
-									<p class="card__description">Вино, кино и домино - все в лучшем виде</p>
-									<div class="card__footer">
-										<p class="card__price">$ 55</p>
-										<div class="card__button --icon-arrow"></div>
+								</a>
+							</article>
+							<article class="products__card card">
+								<a href="https://groha.github.io/geschenk-dev/product" class="card__link">
+									<div class="card__image">
+										<picture>
+											<source media="(max-width: 600px)" srcset="./assets/img/home/card-600.webp" type="image/webp">
+											<img alt="Card" src="./assets/img/home/card.webp">
+										</picture>
 									</div>
-								</div>
-							</a>
-							<a href="https://groha.github.io/geschenk-dev/product" class="popular__card card">
-								<div class="card__image">
-									<picture>
-										<source media="(max-width: 600px)" srcset="./assets/img/home/card-600.webp" type="image/webp">
-										<img alt="Card" src="./assets/img/home/card.webp">
-									</picture>
-								</div>
-								<div class="card__text">
-									<h4 class="card__title">Юбилейный сюрприз</h4>
-									<p class="card__description">Вино, кино и домино - все в лучшем виде</p>
-									<div class="card__footer">
-										<p class="card__price">$ 55</p>
-										<div class="card__button --icon-arrow"></div>
+									<div class="card__text">
+										<h4 class="card__title">Юбилейный сюрприз</h4>
+										<p class="card__description">
+											Вино, кино и домино - все в лучшем виде Lorem ipsum dolor sit amet consectetur adipisicing elit
+										</p>
+										<div class="card__footer">
+											<p class="card__price">$ 55</p>
+											<div class="card__button button button--transparent button--small" role="button">kaufen</div>
+										</div>
 									</div>
-								</div>
-							</a>
+								</a>
+							</article>
+							<article class="products__card card">
+								<a href="https://groha.github.io/geschenk-dev/product" class="card__link">
+									<div class="card__image">
+										<picture>
+											<source media="(max-width: 600px)" srcset="./assets/img/home/card-600.webp" type="image/webp">
+											<img alt="Card" src="./assets/img/home/card.webp">
+										</picture>
+									</div>
+									<div class="card__text">
+										<h4 class="card__title">Юбилейный сюрприз</h4>
+										<p class="card__description">Вино, кино и домино - все в лучшем виде</p>
+										<div class="card__footer">
+											<p class="card__price">$ 55</p>
+											<div class="card__button button button--transparent button--small" role="button">kaufen</div>
+										</div>
+									</div>
+								</a>
+							</article>
+							<article class="products__card card">
+								<a href="https://groha.github.io/geschenk-dev/product" class="card__link">
+									<div class="card__image">
+										<picture>
+											<source media="(max-width: 600px)" srcset="./assets/img/home/card-600.webp" type="image/webp">
+											<img alt="Card" src="./assets/img/home/card.webp">
+										</picture>
+									</div>
+									<div class="card__text">
+										<h4 class="card__title">Юбилейный сюрприз</h4>
+										<p class="card__description">Вино, кино и домино - все в лучшем виде</p>
+										<div class="card__footer">
+											<p class="card__price">$ 55</p>
+											<div class="card__button button button--transparent button--small" role="button">kaufen</div>
+										</div>
+									</div>
+								</a>
+							</article>
 						</div>
-						<a href="#" data-fls-button="" class="popular__button button">Посмотреть все</a>
+						<a href="#" data-fls-button="" class="products__button button">Посмотреть все</a>
 					</div>
 				</section>
 				<section class="articles">
@@ -181,7 +194,7 @@
 										Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil doloremque, reprehenderit a pariatur provident quia laboriosam. Obcaecati assumenda facilis distinctio officiis omnis vel velit! Tenetur magni earum iusto odit laborum.
 									</p>
 								</div>
-								<a href="#" class="body-article__button button button--transparent button--small">mehr lesen</a>
+								<a href="#" class="body-article__button button button--transparent button--icon --icon-arrow button--small">mehr lesen</a>
 							</div>
 							<a href="#" class="article__link">
 								<picture>
@@ -193,7 +206,7 @@
 						</article>
 						<div class="articles__main">
 							<h2 class="articles__title title">Unsere Artikel</h2>
-							<a href="#" class="articles__button button button--transparent">Gehe zum Blog</a>
+							<a href="#" class="articles__button button button--transparent button--icon --icon-arrow">Gehe zum Blog</a>
 						</div>
 						<article class="article article__right">
 							<div class="article__body body-article">
@@ -202,7 +215,7 @@
 										Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, quisquam odio aliquid delectus eum repellat, optio totam, inventore odit nam eius magnam eos quaerat amet maxime voluptas veritatis voluptatem doloribus!
 									</p>
 								</div>
-								<a href="#" class="body-article__button button button--transparent button--small">mehr lesen</a>
+								<a href="#" class="body-article__button button button--transparent button--icon --icon-arrow button--small">mehr lesen</a>
 							</div>
 							<a href="#" class="article__link">
 								<picture>
@@ -390,7 +403,7 @@
 						</div>
 						<div class="reviews__slider-button-next swiper-button-next button --icon-arrow"></div>
 						<div class="reviews__slider-button-prev swiper-button-prev button --icon-arrow"></div>
-						<a data-fls-button="" href="#" class="reviews__button button button--transparent">mehr ansehen</a>
+						<a data-fls-button="" href="#" class="reviews__button button button--transparent button--icon --icon-instagram">mehr ansehen</a>
 					</div>
 				</section>
 				<section class="faq">
@@ -456,7 +469,10 @@
 					<div class="footer__body">
 						<div class="footer__info">
 							<picture>
-								<img src="./assets/img/logo.svg" alt="Logo" class="footer__logo">
+								<picture>
+									<source media="(max-width: 600px)" srcset="./assets/img/1-600.webp" type="image/webp">
+									<img alt="Logo" class="footer__logo" src="./assets/img/1.webp">
+								</picture>
 							</picture>
 							<div class="footer__text">
 								<p>

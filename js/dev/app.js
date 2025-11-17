@@ -503,14 +503,6 @@ function preloader() {
         counter >= 100 ? addLoadedClass() : null;
       }, 10);
     };
-    const preloaderTemplate = `
-			<div class="fls-preloader">
-				<div class="fls-preloader__body">
-					<div class="fls-preloader__counter">0%</div>
-					<div class="fls-preloader__line"><span></span></div>
-				</div>
-			</div>`;
-    document.body.insertAdjacentHTML("beforeend", preloaderTemplate);
     document.querySelector(".fls-preloader");
     const showPecentLoad = document.querySelector(".fls-preloader__counter"), showLineLoad = document.querySelector(".fls-preloader__line span");
     let imagesLoadedCount = 0;
