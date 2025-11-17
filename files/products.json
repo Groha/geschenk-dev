@@ -7,7 +7,7 @@
     "category": "bio",
     "size": "small",
     "gender": "unisex",
-    "img": "assets/img/home/card.png"
+    "img": "./assets/img/home/card.png"
   },
   {
     "id": "2",
@@ -17,7 +17,7 @@
     "category": "alcohol",
     "size": "large",
     "gender": "men",
-    "img": "assets/img/home/card.png"
+    "img": "./assets/img/home/card.png"
   },
   {
     "id": "3",
@@ -27,6 +27,6 @@
     "category": "kids",
     "size": "small",
     "gender": "kids",
-    "img": "assets/img/home/card.png"
+    "img": "./assets/img/home/card.png"
   }
 ]
