@@ -1,0 +1,32 @@
+[
+  {
+    "id": "1",
+    "title": "БИО-набор с чаем и мёдом",
+    "description": "Вино, кино и домино - все в лучшем виде",
+    "price": 25,
+    "category": "bio",
+    "size": "small",
+    "gender": "unisex",
+    "img": "assets/img/home/card.png"
+  },
+  {
+    "id": "2",
+    "title": "Подарок для мужчин с виски",
+    "description": "Вино, кино и домино - все в лучшем виде",
+    "price": 75,
+    "category": "alcohol",
+    "size": "large",
+    "gender": "men",
+    "img": "assets/img/home/card.png"
+  },
+  {
+    "id": "3",
+    "title": "Детский сладкий набор",
+    "description": "Вино, кино и домино - все в лучшем виде",
+    "price": 20,
+    "category": "kids",
+    "size": "small",
+    "gender": "kids",
+    "img": "assets/img/home/card.png"
+  }
+]
