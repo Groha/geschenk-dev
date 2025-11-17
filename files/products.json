@@ -7,7 +7,7 @@
     "category": "bio",
     "size": "small",
     "gender": "unisex",
-    "img": "https://groha.github.io/geschenk-dev/assets/img/home/card.png"
+    "img": "https://groha.github.io/geschenk-dev/assets/img/home/card.webp"
   },
   {
     "id": "2",
@@ -17,7 +17,7 @@
     "category": "alcohol",
     "size": "large",
     "gender": "men",
-    "img": "https://groha.github.io/geschenk-dev/assets/img/home/card.png"
+    "img": "https://groha.github.io/geschenk-dev/assets/img/home/card.webp"
   },
   {
     "id": "3",
@@ -27,6 +27,6 @@
     "category": "kids",
     "size": "small",
     "gender": "kids",
-    "img": "https://groha.github.io/geschenk-dev/assets/img/home/card.png"
+    "img": "https://groha.github.io/geschenk-dev/assets/img/home/card.webp"
   }
 ]
