@@ -203,6 +203,9 @@ body {
   padding-left: 0.9375rem;
   padding-right: 0.9375rem;
 }
+.page:not(.page--home) {
+  margin-block-start: 6.25rem;
+}
 .title {
   font-family: "Pacifico", cursive;
   line-height: 1.28;
