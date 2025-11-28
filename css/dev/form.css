@@ -13,6 +13,7 @@
   font-weight: 500;
   letter-spacing: -0.0625rem;
   text-align: center;
+  margin-block-end: 0.625rem;
 }
 .form__input {
   background-color: var(--second-color);
@@ -20,19 +21,24 @@
   border-radius: 0.5625rem;
   padding: 0.75rem 0.5rem;
 }
-.form__info {
-  text-align: center;
-  font-size: 0.625rem;
+.form__footer {
+  display: grid;
+  gap: 0.625rem;
 }
 .form__button {
   justify-content: center;
 }
+.form__info {
+  font-size: 0.625rem;
+  padding-inline: 0.75rem;
+}
 
 .form-field {
   position: relative;
-  margin-bottom: 0.625rem;
+  margin-block-end: 0.625rem;
 }
 .form-field input, .form-field textarea {
+  border-radius: 0.5rem;
   /* если инпут в фокусе или не пустой */
 }
 .form-field input:focus + label, .form-field input:not(:placeholder-shown) + label, .form-field textarea:focus + label, .form-field textarea:not(:placeholder-shown) + label {
@@ -66,7 +72,10 @@
 }
 @media (max-width: 20em){
   .form {
-    padding: 1rem;
+    padding-block: 1.75rem;
+  }
+  .form {
+    padding-inline: 1rem;
   }
   .form__title {
     font-size: 1.25rem;
@@ -74,7 +83,10 @@
 }
 @media (min-width: 20em) and (max-width: 89.375em){
   .form {
-    padding: clamp( 1rem , 0.423423423425rem  +  2.8828828829vw , 3rem );
+    padding-block: clamp( 1.75rem , 1.3896396396375rem  +  1.8018018018vw , 3rem );
+  }
+  .form {
+    padding-inline: clamp( 1rem , 0.423423423425rem  +  2.8828828829vw , 3rem );
   }
   .form__title {
     font-size: clamp( 1.25rem , 1.177927927925rem  +  0.3603603604vw , 1.5rem );
@@ -82,7 +94,10 @@
 }
 @media (min-width: 89.375em){
   .form {
-    padding: 3rem;
+    padding-block: 3rem;
+  }
+  .form {
+    padding-inline: 3rem;
   }
   .form__title {
     font-size: 1.5rem;

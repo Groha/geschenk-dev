@@ -8,18 +8,18 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="shortcut icon" href="./assets/img/favicon.ico">
 		<title>Home Page</title>
-		<script type="module" crossorigin="" src="./js/index.min.js?v=1763386432675"></script>
+		<script type="module" crossorigin="" src="./js/index.min.js?v=1764328065379"></script>
 		<link rel="modulepreload" crossorigin="" href="./js/app.min.js">
 		<link rel="modulepreload" crossorigin="" href="./js/slider.min.js">
 		<link rel="modulepreload" crossorigin="" href="./js/form.min.js">
-		<link rel="stylesheet" crossorigin="" href="./css/app.min.css?v=1763386432675">
-		<link rel="stylesheet" crossorigin="" href="./css/slider.min.css?v=1763386432675">
-		<link rel="stylesheet" crossorigin="" href="./css/form.min.css?v=1763386432675">
-		<link rel="stylesheet" crossorigin="" href="./css/index.min.css?v=1763386432675">
+		<link rel="stylesheet" crossorigin="" href="./css/app.min.css?v=1764328065379">
+		<link rel="stylesheet" crossorigin="" href="./css/slider.min.css?v=1764328065379">
+		<link rel="stylesheet" crossorigin="" href="./css/form.min.css?v=1764328065379">
+		<link rel="stylesheet" crossorigin="" href="./css/index.min.css?v=1764328065379">
 	</head>
 	<body class="">
 		<div class="wrapper">
-			<header data-fls-header="" data-fls-header-scroll="50" data-fls-header-scroll-show="" class="header">
+			<header data-fls-header="" data-fls-header-scroll="" class="header">
 				<div class="header__container">
 					<a href="https://groha.github.io/geschenk-dev/" class="header__logo-link">
 						<picture>
@@ -45,7 +45,7 @@
 									<a href="#" class="menu__link">Блог</a>
 								</li>
 								<li class="menu__item">
-									<a href="#" class="menu__link">Контакты</a>
+									<a href="https://groha.github.io/geschenk-dev/contacts" class="menu__link">Контакты</a>
 								</li>
 								<li class="menu__item">
 									<a href="#" class="menu__link">Доставка | Оплата</a>
@@ -71,7 +71,7 @@
 </fetch>
 -->
 					<div data-fls-dynamic=".header__container, 768, 1" class="header__right">
-						<a href="https://groha.github.io/geschenk-dev/cart" class="header__cart --icon-cart">
+						<a href="/cart.html" class="header__cart --icon-cart">
 							<span class="cart-count"></span>
 						</a>
 						<ul class="header__langlist">
@@ -103,7 +103,7 @@
 						<img alt="Background" class="hero__bg" src="./assets/img/home/hero_bg.webp">
 					</picture>
 				</section>
-				<section class="https://groha.github.io/geschenk-dev/products">
+				<section class="products">
 					<div class="products__container">
 						<h2 class="products__title title">Популярные наборы</h2>
 						<div class="products__cards">
@@ -443,7 +443,6 @@
 								</details>
 							</div>
 						</div>
-						<!-- <form action="" class="faq__form"></form> -->
 						<form data-fls-form="ajax" data-fls-form-popup="popup" method="POST" action="/sendmail" class="faq__form form">
 							<h5 class="form__title">Залишились питання?</h5>
 							<div class="form-field">
@@ -458,8 +457,10 @@
 								<input type="email" name="form[email]" required placeholder="" data-fls-form-errtext="Error" class="form__input input">
 								<label>E-mail</label>
 							</div>
-							<span class="form__info">*Натискаючи на кнопку, Ви даэте згоду на обробку Ваших персональних даних.</span>
-							<button data-fls-button="" type="submit" class="form__button button">Напишiть менi!</button>
+							<div class="form__footer">
+								<button data-fls-button="" type="submit" class="form__button button">Напишiть менi!</button>
+								<span class="form__info">*Натискаючи на кнопку, Ви даэте згоду на обробку Ваших персональних даних.</span>
+							</div>
 						</form>
 					</div>
 				</section>
