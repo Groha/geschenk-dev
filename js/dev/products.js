@@ -1,4 +1,5 @@
 import "./app.min.js";
+/* empty css           */
 let allProducts = [];
 let filteredProducts = [];
 const productsList = document.querySelector(".products-page__cards");
@@ -19,7 +20,7 @@ function closeFilters() {
 }
 async function loadProducts() {
   try {
-    const res = await fetch("https://groha.github.io/geschenk-dev/files/products.json");
+    const res = await fetch("/files/products.json");
     if (!res.ok) throw new Error("Ошибка загрузки товаров");
     allProducts = await res.json();
     filteredProducts = allProducts;
@@ -48,16 +49,17 @@ function renderProducts(products) {
       card.className = "products__card card fade-in";
       card.style.animationDelay = `${delay}ms`;
       card.innerHTML = `
-        <a href="https://groha.github.io/geschenk-dev/product" class="card__link">
+        <a href="/product" class="card__link">
           <div class="card__image">
             <img src="${p.img}" alt="${p.title}">
           </div>
           <div class="card__text">
             <h4 class="card__title">${p.title}</h4>
             <p class="card__description">${p.description}</p>
-            <div class="card__footer">
-              <p class="card__price">$ ${p.price}</p>
-              <div class="card__button button button--transparent button--small" role="button">kaufen</div>
+            <div class="card__footer button" role="button">
+              <div>kaufen</div>
+              <span>|</span>
+              <p class="card__price">${p.price}€</p>
             </div>
           </div>
         </a>

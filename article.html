@@ -14,16 +14,10 @@
 		<link rel="manifest" href="@icons/manifest.json">
 		<meta name="msapplication-TileImage" content="@icons/ms-icon-144x144.png">
 		<meta name="msapplication-TileColor" content="#B8860B">
-		<title>Checkout</title>
-		<script type="module" crossorigin="" src="./js/checkout.min.js?v=1765304911357"></script>
-		<link rel="modulepreload" crossorigin="" href="./js/app.min.js">
-		<link rel="modulepreload" crossorigin="" href="./js/autoheight.min.js">
-		<link rel="modulepreload" crossorigin="" href="./js/form.min.js">
-		<link rel="stylesheet" crossorigin="" href="./css/app.min.css?v=1765304911357">
-		<link rel="stylesheet" crossorigin="" href="./css/autoheight.min.css?v=1765304911357">
-		<link rel="stylesheet" crossorigin="" href="./css/form.min.css?v=1765304911357">
-		<link rel="stylesheet" crossorigin="" href="./css/checkout.min.css?v=1765304911357">
-		<link rel="stylesheet" crossorigin="" href="./css/button.min.css?v=1765304911357">
+		<title>Article Page</title>
+		<script type="module" crossorigin="" src="./js/app.min.js?v=1765304911358"></script>
+		<link rel="stylesheet" crossorigin="" href="./css/app.min.css?v=1765304911358">
+		<link rel="stylesheet" crossorigin="" href="./css/article.min2.css?v=1765304911358">
 	</head>
 	<body class="">
 		<div class="wrapper">
@@ -90,47 +84,62 @@
 					</div>
 				</div>
 			</header>
-			<main class="page page--checkout">
-				<div class="checkout">
-					<div class="checkout__container">
-						<h1 class="checkout__title">Оформление заказа</h1>
-						<div class="checkout__cart">
-							<h2>Ваши товары</h2>
-							<ul class="checkout__items"></ul>
-							<div class="checkout__summary">
-								<p>
-									Количество товаров:
-									<span class="checkout__subtotal">0 шт.</span>
-								</p>
-								<p>
-									Итого:
-									<span class="checkout__total">0 ₴</span>
-								</p>
-							</div>
-						</div>
-						<form data-fls-form="" data-fls-form-validatenow="" data-fls-form-popup="popup" class="checkout__form form">
-							<h2 class="form__title">Ваши данные</h2>
-							<div class="form-field">
-								<input type="text" name="form[name]" required placeholder="" data-fls-form-errtext="Error" class="form__input input">
-								<label>Имя</label>
-							</div>
-							<div class="form-field">
-								<input type="tel" name="form[phone]" required placeholder="" data-fls-form-errtext="Error" class="form__input input">
-								<label>Телефон</label>
-							</div>
-							<div class="form-field">
-								<input type="email" name="form[email]" required placeholder="" data-fls-form-errtext="Error" class="form__input input">
-								<label>E-mail</label>
-							</div>
-							<div class="form-field">
-								<textarea data-fls-input-autoheight="" name="form[address]" required placeholder="" data-fls-form-errtext="Error" class="form__input input"></textarea>
-								<label class="form__label">Адрес</label>
-							</div>
-							<button data-fls-button="" type="submit" class="form__button button">Оформить заказ</button>
-						</form>
-						<!-- <div class="checkout__message"></div> -->
+			<main class="page page--article">
+				<article class="article">
+					<div class="article__hero">
+						<picture>
+							<source media="(max-width: 600px)" srcset="./assets/img/article/01-600.webp" type="image/webp">
+							<img alt="Die Geschichte der Geschenke" src="./assets/img/article/01.webp">
+						</picture>
 					</div>
-				</div>
+					<div class="article__container">
+						<header class="article__header">
+							<h1 class="article__title">Die Geschichte der Geschenke</h1>
+							<div class="article__meta">
+								<time datetime="2025-12-09">09.12.2025</time>
+								<span>· 6 Min. lesen</span>
+							</div>
+						</header>
+						<div class="article__content text">
+							<p>
+								Das Schenken begleitet die Menschheit seit den frühesten Zeiten. Bereits in der Steinzeit tauschten Menschen einfache Gegenstände wie Werkzeuge, Muscheln oder Tierzähne aus. Solche Gaben hatten nicht nur praktischen, sondern auch symbolischen Wert – sie zeigten Dankbarkeit, Freundschaft oder Respekt gegenüber anderen Mitgliedern der Gemeinschaft.
+							</p>
+							<p>
+								In den alten Hochkulturen – etwa in Ägypten, Mesopotamien oder China – entwickelte sich das Schenken zu einem wichtigen gesellschaftlichen Ritual. Geschenke dienten dazu, politische Allianzen zu festigen, religiöse Zeremonien zu bereichern oder soziale Hierarchien zu unterstreichen. Herrscher erhielten wertvolle Objekte aus Gold, Edelsteinen oder seltenen Stoffen, während die Bevölkerung einfachere, aber ebenfalls bedeutungsvolle Geschenke austauschte.
+							</p>
+							<figure>
+								<picture>
+									<source media="(max-width: 600px)" srcset="./assets/img/article/02-600.webp" type="image/webp">
+									<img alt="" src="./assets/img/article/02.webp">
+								</picture>
+							</figure>
+							<p>
+								Im antiken Griechenland und Rom spielte das Schenken eine große Rolle bei Festen und religiösen Feiern. Besonders an Saturnalia, dem römischen Winterfest, überreichten sich die Menschen kleine Aufmerksamkeiten wie Kerzen, Figuren oder Glückssymbole. Diese Traditionen beeinflussten stark die heutigen Bräuche rund um Weihnachten.
+							</p>
+							<figure>
+								<picture>
+									<source media="(max-width: 600px)" srcset="./assets/img/article/03-600.webp" type="image/webp">
+									<img alt="" src="./assets/img/article/03.webp">
+								</picture>
+							</figure>
+							<p>
+								Im Mittelalter waren Geschenke oft Ausdruck von Loyalität und Unterordnung. Vasallen überreichten ihren Lehnsherren Naturalien, während Könige und Fürsten kostbare Präsente austauschten, um Macht und Einfluss zu demonstrieren. Zugleich entstand die Sitte, bei Hochzeiten und Taufen Geschenke zu machen, die bis heute fortlebt.
+							</p>
+							<p>
+								Mit der Neuzeit und der Entstehung des Bürgertums veränderte sich die Bedeutung von Geschenken. Sie wurden zunehmend zu persönlichen Gesten der Zuneigung und Liebe. Besonders im 19. Jahrhundert – mit der Verbreitung des Weihnachtsbaums und der Kommerzialisierung des Weihnachtsfestes – erhielt das Schenken die Form, die wir heute kennen.
+							</p>
+							<figure>
+								<picture>
+									<source media="(max-width: 600px)" srcset="./assets/img/article/04-600.webp" type="image/webp">
+									<img alt="" src="./assets/img/article/04.webp">
+								</picture>
+							</figure>
+							<p>
+								Heute sind Geschenke ein fester Bestandteil unseres Lebens. Sie begleiten uns zu Geburtstagen, Hochzeiten, Jubiläen und religiösen Festen. Doch unabhängig von Zeit und Kultur bleibt die zentrale Idee stets gleich: Ein Geschenk ist ein Ausdruck von Verbundenheit, Wertschätzung und Menschlichkeit.
+							</p>
+						</div>
+					</div>
+				</article>
 			</main>
 			<footer data-fls-footer="" class="footer">
 				<div class="footer__container">

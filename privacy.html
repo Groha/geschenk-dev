@@ -14,16 +14,10 @@
 		<link rel="manifest" href="@icons/manifest.json">
 		<meta name="msapplication-TileImage" content="@icons/ms-icon-144x144.png">
 		<meta name="msapplication-TileColor" content="#B8860B">
-		<title>Checkout</title>
-		<script type="module" crossorigin="" src="./js/checkout.min.js?v=1765304911357"></script>
-		<link rel="modulepreload" crossorigin="" href="./js/app.min.js">
-		<link rel="modulepreload" crossorigin="" href="./js/autoheight.min.js">
-		<link rel="modulepreload" crossorigin="" href="./js/form.min.js">
-		<link rel="stylesheet" crossorigin="" href="./css/app.min.css?v=1765304911357">
-		<link rel="stylesheet" crossorigin="" href="./css/autoheight.min.css?v=1765304911357">
-		<link rel="stylesheet" crossorigin="" href="./css/form.min.css?v=1765304911357">
-		<link rel="stylesheet" crossorigin="" href="./css/checkout.min.css?v=1765304911357">
-		<link rel="stylesheet" crossorigin="" href="./css/button.min.css?v=1765304911357">
+		<title>Impressum / Datenschutz</title>
+		<script type="module" crossorigin="" src="./js/app.min.js?v=1765304911353"></script>
+		<link rel="stylesheet" crossorigin="" href="./css/app.min.css?v=1765304911353">
+		<link rel="stylesheet" crossorigin="" href="./css/privacy.min.css?v=1765304911353">
 	</head>
 	<body class="">
 		<div class="wrapper">
@@ -90,47 +84,58 @@
 					</div>
 				</div>
 			</header>
-			<main class="page page--checkout">
-				<div class="checkout">
-					<div class="checkout__container">
-						<h1 class="checkout__title">Оформление заказа</h1>
-						<div class="checkout__cart">
-							<h2>Ваши товары</h2>
-							<ul class="checkout__items"></ul>
-							<div class="checkout__summary">
-								<p>
-									Количество товаров:
-									<span class="checkout__subtotal">0 шт.</span>
-								</p>
-								<p>
-									Итого:
-									<span class="checkout__total">0 ₴</span>
-								</p>
-							</div>
-						</div>
-						<form data-fls-form="" data-fls-form-validatenow="" data-fls-form-popup="popup" class="checkout__form form">
-							<h2 class="form__title">Ваши данные</h2>
-							<div class="form-field">
-								<input type="text" name="form[name]" required placeholder="" data-fls-form-errtext="Error" class="form__input input">
-								<label>Имя</label>
-							</div>
-							<div class="form-field">
-								<input type="tel" name="form[phone]" required placeholder="" data-fls-form-errtext="Error" class="form__input input">
-								<label>Телефон</label>
-							</div>
-							<div class="form-field">
-								<input type="email" name="form[email]" required placeholder="" data-fls-form-errtext="Error" class="form__input input">
-								<label>E-mail</label>
-							</div>
-							<div class="form-field">
-								<textarea data-fls-input-autoheight="" name="form[address]" required placeholder="" data-fls-form-errtext="Error" class="form__input input"></textarea>
-								<label class="form__label">Адрес</label>
-							</div>
-							<button data-fls-button="" type="submit" class="form__button button">Оформить заказ</button>
-						</form>
-						<!-- <div class="checkout__message"></div> -->
+			<main class="page page--privacy">
+				<section class="privacy">
+					<div class="privacy__container">
+						<h1 class="privacy__title">Impressum & Datenschutz</h1>
+						<!-- Impressum -->
+						<article class="text">
+							<h2>Impressum</h2>
+							<p>
+								[Firmenname]
+								<br>
+								[Straße und Hausnummer]
+								<br>
+								[PLZ, Ort]
+								<br>
+								Telefon: [Telefonnummer]
+								<br>
+								E-Mail: [E-Mail-Adresse]
+							</p>
+							<p>Vertretungsberechtigt: [Name der vertretungsberechtigten Person]</p>
+							<p>Umsatzsteuer-ID: [Nummer falls vorhanden]</p>
+						</article>
+						<!-- Datenschutz -->
+						<article class="text">
+							<h2>Datenschutz</h2>
+							<p>
+								1. Verantwortlicher
+								<br>
+								Verantwortlich für die Datenverarbeitung ist [Firmenname, Adresse, E-Mail, Telefonnummer].
+							</p>
+							<p>
+								2. Erhebung und Verwendung personenbezogener Daten
+								<br>
+								Wir erheben nur die Daten, die für die Abwicklung von Bestellungen oder zur Kommunikation erforderlich sind. Die Daten werden ausschließlich für die genannten Zwecke verwendet.
+							</p>
+							<p>
+								3. Weitergabe an Dritte
+								<br>
+								Eine Weitergabe an Dritte erfolgt nur, soweit dies zur Bestellabwicklung erforderlich ist (z. B. Versanddienstleister) oder gesetzlich vorgeschrieben ist.
+							</p>
+							<p>
+								4. Rechte der Betroffenen
+								<br>
+								Kunden haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung und Datenübertragbarkeit ihrer personenbezogenen Daten.
+							</p>
+							<p>
+								5. Sicherheit
+								<br>
+								Wir setzen technische und organisatorische Maßnahmen ein, um Ihre Daten vor Verlust, Missbrauch und unbefugtem Zugriff zu schützen.
+							</p>
+						</article>
 					</div>
-				</div>
+				</section>
 			</main>
 			<footer data-fls-footer="" class="footer">
 				<div class="footer__container">

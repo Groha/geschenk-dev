@@ -14,16 +14,10 @@
 		<link rel="manifest" href="@icons/manifest.json">
 		<meta name="msapplication-TileImage" content="@icons/ms-icon-144x144.png">
 		<meta name="msapplication-TileColor" content="#B8860B">
-		<title>Checkout</title>
-		<script type="module" crossorigin="" src="./js/checkout.min.js?v=1765304911357"></script>
-		<link rel="modulepreload" crossorigin="" href="./js/app.min.js">
-		<link rel="modulepreload" crossorigin="" href="./js/autoheight.min.js">
-		<link rel="modulepreload" crossorigin="" href="./js/form.min.js">
-		<link rel="stylesheet" crossorigin="" href="./css/app.min.css?v=1765304911357">
-		<link rel="stylesheet" crossorigin="" href="./css/autoheight.min.css?v=1765304911357">
-		<link rel="stylesheet" crossorigin="" href="./css/form.min.css?v=1765304911357">
-		<link rel="stylesheet" crossorigin="" href="./css/checkout.min.css?v=1765304911357">
-		<link rel="stylesheet" crossorigin="" href="./css/button.min.css?v=1765304911357">
+		<title>About Us</title>
+		<script type="module" crossorigin="" src="./js/app.min.js?v=1765304911359"></script>
+		<link rel="stylesheet" crossorigin="" href="./css/app.min.css?v=1765304911359">
+		<link rel="stylesheet" crossorigin="" href="./css/about.min.css?v=1765304911359">
 	</head>
 	<body class="">
 		<div class="wrapper">
@@ -44,7 +38,7 @@
 									<a href="https://groha.github.io/geschenk-dev/products" class="menu__link">Каталог</a>
 								</li>
 								<li class="menu__item">
-									<a href="https://groha.github.io/geschenk-dev/about" class="menu__link">Про нас</a>
+									<a href="https://groha.github.io/geschenk-dev/about" class="menu__link menu__link--active">Про нас</a>
 								</li>
 								<li class="menu__item">
 									<a href="https://groha.github.io/geschenk-dev/blog" class="menu__link">Блог</a>
@@ -90,47 +84,63 @@
 					</div>
 				</div>
 			</header>
-			<main class="page page--checkout">
-				<div class="checkout">
-					<div class="checkout__container">
-						<h1 class="checkout__title">Оформление заказа</h1>
-						<div class="checkout__cart">
-							<h2>Ваши товары</h2>
-							<ul class="checkout__items"></ul>
-							<div class="checkout__summary">
+			<main class="page page--about">
+				<section class="about">
+					<div class="about__container">
+						<h1 class="about__title">Über uns</h1>
+						<article class="about__block">
+							<div class="about__text text">
 								<p>
-									Количество товаров:
-									<span class="checkout__subtotal">0 шт.</span>
+									Unsere Geschenksets werden liebevoll von Hand zusammengestellt. Wir wählen nur frische Produkte,
+            hochwertige Materialien und achten darauf, dass jedes Set perfekt aussieht.
 								</p>
 								<p>
-									Итого:
-									<span class="checkout__total">0 ₴</span>
+									Für Sie bedeutet das: keine langen Fahrten in Geschäfte, keine Suche nach passenden Produkten,
+            keine Stunden fürs Verpacken. Sie wählen ein fertiges Geschenk - wir erledigen den Rest.
 								</p>
 							</div>
-						</div>
-						<form data-fls-form="" data-fls-form-validatenow="" data-fls-form-popup="popup" class="checkout__form form">
-							<h2 class="form__title">Ваши данные</h2>
-							<div class="form-field">
-								<input type="text" name="form[name]" required placeholder="" data-fls-form-errtext="Error" class="form__input input">
-								<label>Имя</label>
+							<div class="about__image-wrapper">
+								<picture>
+									<source media="(max-width: 600px)" srcset="./assets/img/home/about-600.webp" type="image/webp">
+									<source media="(max-width: 1200px)" srcset="./assets/img/home/about-1200.webp" type="image/webp">
+									<img alt="Geschenksets" class="about__image" src="./assets/img/home/about.webp">
+								</picture>
 							</div>
-							<div class="form-field">
-								<input type="tel" name="form[phone]" required placeholder="" data-fls-form-errtext="Error" class="form__input input">
-								<label>Телефон</label>
+						</article>
+						<article class="about__block">
+							<div class="about__text text">
+								<h2>Unsere Philosophie</h2>
+								<ul class="about__list">
+									<li>Handarbeit und Liebe zum Detail</li>
+									<li>Frische Produkte direkt nach Bestellung</li>
+									<li>Klare, faire Preise</li>
+									<li>Nachhaltige Verpackung, wo immer möglich</li>
+								</ul>
 							</div>
-							<div class="form-field">
-								<input type="email" name="form[email]" required placeholder="" data-fls-form-errtext="Error" class="form__input input">
-								<label>E-mail</label>
+							<div class="about__image-wrapper">
+								<picture>
+									<source media="(max-width: 600px)" srcset="./assets/img/home/bg_about-600.webp" type="image/webp">
+									<img alt="Unsere Philosophie" class="about__image" src="./assets/img/home/bg_about.webp">
+								</picture>
 							</div>
-							<div class="form-field">
-								<textarea data-fls-input-autoheight="" name="form[address]" required placeholder="" data-fls-form-errtext="Error" class="form__input input"></textarea>
-								<label class="form__label">Адрес</label>
+						</article>
+						<article class="about__block">
+							<div class="about__text text">
+								<h2>Warum unsere Geschenksets?</h2>
+								<p>
+									Unsere Sets sind ideal für Geburtstage, besondere Anlässe oder als kleine Aufmerksamkeit.
+            Sie bekommen ein hochwertiges, liebevoll zusammengestelltes Geschenk – ohne Stress und ohne Zeitverlust.
+								</p>
 							</div>
-							<button data-fls-button="" type="submit" class="form__button button">Оформить заказ</button>
-						</form>
-						<!-- <div class="checkout__message"></div> -->
+							<div class="about__image-wrapper">
+								<picture>
+									<source media="(max-width: 600px)" srcset="./assets/img/home/card_4-600.webp" type="image/webp">
+									<img alt="Geschenke auswählen" class="about__image" src="./assets/img/home/card_4.webp">
+								</picture>
+							</div>
+						</article>
 					</div>
-				</div>
+				</section>
 			</main>
 			<footer data-fls-footer="" class="footer">
 				<div class="footer__container">

@@ -14,16 +14,13 @@
 		<link rel="manifest" href="@icons/manifest.json">
 		<meta name="msapplication-TileImage" content="@icons/ms-icon-144x144.png">
 		<meta name="msapplication-TileColor" content="#B8860B">
-		<title>Checkout</title>
-		<script type="module" crossorigin="" src="./js/checkout.min.js?v=1765304911357"></script>
-		<link rel="modulepreload" crossorigin="" href="./js/app.min.js">
-		<link rel="modulepreload" crossorigin="" href="./js/autoheight.min.js">
-		<link rel="modulepreload" crossorigin="" href="./js/form.min.js">
-		<link rel="stylesheet" crossorigin="" href="./css/app.min.css?v=1765304911357">
-		<link rel="stylesheet" crossorigin="" href="./css/autoheight.min.css?v=1765304911357">
-		<link rel="stylesheet" crossorigin="" href="./css/form.min.css?v=1765304911357">
-		<link rel="stylesheet" crossorigin="" href="./css/checkout.min.css?v=1765304911357">
-		<link rel="stylesheet" crossorigin="" href="./css/button.min.css?v=1765304911357">
+		<title>Blog Page</title>
+		<script type="module" crossorigin="" src="./js/app.min.js?v=1765304911356"></script>
+		<script type="module" crossorigin="" src="./js/article.min2.js?v=1765304911356"></script>
+		<link rel="stylesheet" crossorigin="" href="./css/app.min.css?v=1765304911356">
+		<link rel="stylesheet" crossorigin="" href="./css/article.min.css?v=1765304911356">
+		<link rel="stylesheet" crossorigin="" href="./css/blog.min.css?v=1765304911356">
+		<link rel="stylesheet" crossorigin="" href="./css/button.min.css?v=1765304911356">
 	</head>
 	<body class="">
 		<div class="wrapper">
@@ -47,7 +44,7 @@
 									<a href="https://groha.github.io/geschenk-dev/about" class="menu__link">Про нас</a>
 								</li>
 								<li class="menu__item">
-									<a href="https://groha.github.io/geschenk-dev/blog" class="menu__link">Блог</a>
+									<a href="https://groha.github.io/geschenk-dev/blog" class="menu__link menu__link--active">Блог</a>
 								</li>
 								<li class="menu__item">
 									<a href="https://groha.github.io/geschenk-dev/contacts" class="menu__link">Контакты</a>
@@ -90,47 +87,98 @@
 					</div>
 				</div>
 			</header>
-			<main class="page page--checkout">
-				<div class="checkout">
-					<div class="checkout__container">
-						<h1 class="checkout__title">Оформление заказа</h1>
-						<div class="checkout__cart">
-							<h2>Ваши товары</h2>
-							<ul class="checkout__items"></ul>
-							<div class="checkout__summary">
-								<p>
-									Количество товаров:
-									<span class="checkout__subtotal">0 шт.</span>
-								</p>
-								<p>
-									Итого:
-									<span class="checkout__total">0 ₴</span>
-								</p>
-							</div>
+			<main class="page page--blog">
+				<section class="blog">
+					<div class="blog__container">
+						<h1 class="blog__title">
+							Unser Blog
+							<br>
+							Inspiration für jeden Anlass
+						</h1>
+						<div class="blog__articles">
+							<article data-fls-article="" class="blog__article article">
+								<a href="https://groha.github.io/geschenk-dev/article" class="article__link">
+									<div class="article__image">
+										<picture>
+											<source media="(max-width: 600px)" srcset="./assets/img/article/01-600.webp" type="image/webp">
+											<img alt="Blog Post" src="./assets/img/article/01.webp">
+										</picture>
+									</div>
+									<div class="article__text">
+										<h4 class="article__title">Die Geschichte der Geschenke</h4>
+										<p class="article__description">
+											Das Schenken begleitet die Menschheit seit den frühesten Zeiten. Bereits in der Steinzeit tauschten Menschen einfache Gegenstände wie Werkzeuge, Muscheln oder Tierzähne aus. Solche Gaben hatten nicht nur praktischen, sondern auch symbolischen Wert – sie zeigten Dankbarkeit, Freundschaft oder Respekt gegenüber anderen Mitgliedern der Gemeinschaft.
+										</p>
+										<div class="article__footer">
+											<p class="article__meta">9. Dezember 2025</p>
+											<div data-fls-button="" class="article__button button button--transparent button--icon --icon-arrow button--small" role="button">mehr Lesen</div>
+										</div>
+									</div>
+								</a>
+							</article>
+							<article data-fls-article="" class="blog__article article">
+								<a href="https://groha.github.io/geschenk-dev/article" class="article__link">
+									<div class="article__image">
+										<picture>
+											<source media="(max-width: 600px)" srcset="./assets/img/article/01-600.webp" type="image/webp">
+											<img alt="Blog Post" src="./assets/img/article/01.webp">
+										</picture>
+									</div>
+									<div class="article__text">
+										<h4 class="article__title">5 Tipps für das perfekte Geschenk</h4>
+										<p class="article__description">
+											Erfahren Sie, wie Sie in wenigen Minuten ein Geschenk zusammenstellen, das Freude bereitet und Zeit spart.
+										</p>
+										<div class="article__footer">
+											<p class="article__meta">10. Dezember 2025</p>
+											<div data-fls-button="" class="article__button button button--transparent button--icon --icon-arrow button--small" role="button">mehr Lesen</div>
+										</div>
+									</div>
+								</a>
+							</article>
+							<article data-fls-article="" class="blog__article article">
+								<a href="https://groha.github.io/geschenk-dev/article" class="article__link">
+									<div class="article__image">
+										<picture>
+											<source media="(max-width: 600px)" srcset="./assets/img/article/01-600.webp" type="image/webp">
+											<img alt="Blog Post" src="./assets/img/article/01.webp">
+										</picture>
+									</div>
+									<div class="article__text">
+										<h4 class="article__title">5 Tipps für das perfekte Geschenk</h4>
+										<p class="article__description">
+											Erfahren Sie, wie Sie in wenigen Minuten ein Geschenk zusammenstellen, das Freude bereitet und Zeit spart.
+										</p>
+										<div class="article__footer">
+											<p class="article__meta">10. Dezember 2025</p>
+											<div data-fls-button="" class="article__button button button--transparent button--icon --icon-arrow button--small" role="button">mehr Lesen</div>
+										</div>
+									</div>
+								</a>
+							</article>
+							<article data-fls-article="" class="blog__article article">
+								<a href="https://groha.github.io/geschenk-dev/article" class="article__link">
+									<div class="article__image">
+										<picture>
+											<source media="(max-width: 600px)" srcset="./assets/img/article/01-600.webp" type="image/webp">
+											<img alt="Blog Post" src="./assets/img/article/01.webp">
+										</picture>
+									</div>
+									<div class="article__text">
+										<h4 class="article__title">5 Tipps für das perfekte Geschenk</h4>
+										<p class="article__description">
+											Erfahren Sie, wie Sie in wenigen Minuten ein Geschenk zusammenstellen, das Freude bereitet und Zeit spart.
+										</p>
+										<div class="article__footer">
+											<p class="article__meta">10. Dezember 2025</p>
+											<div data-fls-button="" class="article__button button button--transparent button--icon --icon-arrow button--small" role="button">mehr Lesen</div>
+										</div>
+									</div>
+								</a>
+							</article>
 						</div>
-						<form data-fls-form="" data-fls-form-validatenow="" data-fls-form-popup="popup" class="checkout__form form">
-							<h2 class="form__title">Ваши данные</h2>
-							<div class="form-field">
-								<input type="text" name="form[name]" required placeholder="" data-fls-form-errtext="Error" class="form__input input">
-								<label>Имя</label>
-							</div>
-							<div class="form-field">
-								<input type="tel" name="form[phone]" required placeholder="" data-fls-form-errtext="Error" class="form__input input">
-								<label>Телефон</label>
-							</div>
-							<div class="form-field">
-								<input type="email" name="form[email]" required placeholder="" data-fls-form-errtext="Error" class="form__input input">
-								<label>E-mail</label>
-							</div>
-							<div class="form-field">
-								<textarea data-fls-input-autoheight="" name="form[address]" required placeholder="" data-fls-form-errtext="Error" class="form__input input"></textarea>
-								<label class="form__label">Адрес</label>
-							</div>
-							<button data-fls-button="" type="submit" class="form__button button">Оформить заказ</button>
-						</form>
-						<!-- <div class="checkout__message"></div> -->
 					</div>
-				</div>
+				</section>
 			</main>
 			<footer data-fls-footer="" class="footer">
 				<div class="footer__container">

@@ -6,12 +6,20 @@
 		</style>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="shortcut icon" href="./assets/img/favicon.ico">
+		<link rel="shortcut icon" href="@icons/favicon.ico">
+		<link rel="icon" type="image/png" sizes="32x32" href="@icons/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="@icons/favicon-16x16.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="@icons/favicon-96x96.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="@icons/apple-icon-180x180.png">
+		<link rel="manifest" href="@icons/manifest.json">
+		<meta name="msapplication-TileImage" content="@icons/ms-icon-144x144.png">
+		<meta name="msapplication-TileColor" content="#B8860B">
 		<title>Products</title>
-		<script type="module" crossorigin="" src="./js/products.min.js?v=1764332181530"></script>
+		<script type="module" crossorigin="" src="./js/products.min.js?v=1765304911355"></script>
 		<link rel="modulepreload" crossorigin="" href="./js/app.min.js">
-		<link rel="stylesheet" crossorigin="" href="./css/app.min.css?v=1764332181530">
-		<link rel="stylesheet" crossorigin="" href="./css/products.min.css?v=1764332181530">
+		<link rel="stylesheet" crossorigin="" href="./css/app.min.css?v=1765304911355">
+		<link rel="stylesheet" crossorigin="" href="./css/products.min.css?v=1765304911355">
+		<link rel="stylesheet" crossorigin="" href="./css/button.min.css?v=1765304911355">
 	</head>
 	<body class="">
 		<div class="wrapper">
@@ -19,10 +27,7 @@
 				<div class="header__container">
 					<a href="https://groha.github.io/geschenk-dev/" class="header__logo-link">
 						<picture>
-							<picture>
-								<source media="(max-width: 600px)" srcset="./assets/img/logo-600.webp" type="image/webp">
-								<img alt="Logo" class="header__logo" src="./assets/img/logo.webp">
-							</picture>
+							<img src="./assets/img/logo.svg" alt="Logo" class="header__logo">
 						</picture>
 					</a>
 					<div class="header__menu menu">
@@ -35,16 +40,13 @@
 									<a href="https://groha.github.io/geschenk-dev/products" class="menu__link menu__link--active">Каталог</a>
 								</li>
 								<li class="menu__item">
-									<a href="#" class="menu__link">Про нас</a>
+									<a href="https://groha.github.io/geschenk-dev/about" class="menu__link">Про нас</a>
 								</li>
 								<li class="menu__item">
-									<a href="#" class="menu__link">Блог</a>
+									<a href="https://groha.github.io/geschenk-dev/blog" class="menu__link">Блог</a>
 								</li>
 								<li class="menu__item">
 									<a href="https://groha.github.io/geschenk-dev/contacts" class="menu__link">Контакты</a>
-								</li>
-								<li class="menu__item">
-									<a href="#" class="menu__link">Доставка | Оплата</a>
 								</li>
 							</ul>
 							<ul class="header__langlist">
@@ -87,7 +89,7 @@
 			<main class="page page--products">
 				<section class="products-page">
 					<div class="products-page__container">
-						<h1 class="products-page__title">Каталог</h1>
+						<h1 class="products-page__title">Finde dein perfektes Geschenk</h1>
 						<div class="products-page__body">
 							<aside class="products-page__filters filters">
 								<button class="filters__btn button button--transparent button--icon --icon-filter">Фильтры</button>
@@ -200,10 +202,7 @@
 					<div class="footer__body">
 						<div class="footer__info">
 							<picture>
-								<picture>
-									<source media="(max-width: 600px)" srcset="./assets/img/logo-600.webp" type="image/webp">
-									<img alt="Logo" class="footer__logo" src="./assets/img/logo.webp">
-								</picture>
+								<img src="./assets/img/logo.svg" alt="Logo" class="footer__logo">
 							</picture>
 							<div class="footer__text">
 								<p>
@@ -219,19 +218,16 @@
 								<div class="nav__footer-body spollers__body">
 									<ul class="nav__footer-list">
 										<li class="nav__footer-item">
-											<a href="#" class="nav__footer-link">Каталог</a>
+											<a href="https://groha.github.io/geschenk-dev/products" class="nav__footer-link">Каталог</a>
 										</li>
 										<li class="nav__footer-item">
-											<a href="#" class="nav__footer-link">Про нас</a>
+											<a href="https://groha.github.io/geschenk-dev/about" class="nav__footer-link">Про нас</a>
 										</li>
 										<li class="nav__footer-item">
-											<a href="#" class="nav__footer-link">Блог</a>
+											<a href="https://groha.github.io/geschenk-dev/blog" class="nav__footer-link">Блог</a>
 										</li>
 										<li class="nav__footer-item">
-											<a href="#" class="nav__footer-link">Контакты</a>
-										</li>
-										<li class="nav__footer-item">
-											<a href="#" class="nav__footer-link">Доставка | Оплата</a>
+											<a href="https://groha.github.io/geschenk-dev/contacts" class="nav__footer-link">Контакты</a>
 										</li>
 									</ul>
 								</div>
@@ -240,21 +236,18 @@
 						<div data-fls-spollers="479.98,max" class="spollers">
 							<details class="spollers__item">
 								<summary class="spollers__title">
-									<h5 class="nav__footer-title">Помощь</h5>
+									<h5 class="nav__footer-title">Клиентам</h5>
 								</summary>
 								<div class="nav__footer-body spollers__body">
 									<ul class="nav__footer-list">
 										<li class="nav__footer-item">
-											<a href="#" class="nav__footer-link">Вопросы и ответы</a>
+											<a href="https://groha.github.io/geschenk-dev/service" class="nav__footer-link">Помощь и FAQ</a>
 										</li>
 										<li class="nav__footer-item">
-											<a href="#" class="nav__footer-link">Возврат и обмен</a>
+											<a href="https://groha.github.io/geschenk-dev/terms" class="nav__footer-link">AGB & Cookies</a>
 										</li>
 										<li class="nav__footer-item">
-											<a href="#" class="nav__footer-link">Условия использования</a>
-										</li>
-										<li class="nav__footer-item">
-											<a href="#" class="nav__footer-link">Политика конфиденциальности</a>
+											<a href="https://groha.github.io/geschenk-dev/privacy" class="nav__footer-link">Impressum & Datenschutz</a>
 										</li>
 									</ul>
 								</div>
@@ -283,11 +276,56 @@
 							<a href="#" class="socials__link --icon-threads">threads</a>
 						</li>
 						<li class="socials__item">
-							<a href="#" class="socials__link --icon-whatsapp">whatsapp</a>
+							<a href="#" class="socials__link --icon-fb">facebook</a>
 						</li>
+						<!--
+<li class="socials__item">
+<a href="#" class="socials__link --icon-whatsapp">whatsapp</a>
+</li>
+-->
 					</ul>
 				</div>
 			</footer>
 		</div>
 	</body>
+	<div class="preloader">
+		<div class="preloader-logo">
+			<!-- Generator: Adobe Illustrator 27.9.0, SVG Export Plug-In . SVG Version: 6.00 Build 0) -->
+			<svg version="1.1" id="logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 822 306.1" style="enable-background:new 0 0 822 306.1;" xml:space="preserve">
+				<style type="text/css">
+					.st0{fill:none;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+				</style>
+				<g id="euch">
+					<path d="M100.3 237.549H134.7C135.8 237.549 136.7 236.649 136.7 235.549C136.7 234.449 135.8 233.549 134.7 233.549H102.3V210.649H125.7C126.8 210.649 127.7 209.749 127.7 208.649C127.7 207.549 126.8 206.649 125.7 206.649H102.3V183.749H134.7C135.8 183.749 136.7 182.849 136.7 181.749C136.7 180.649 135.8 179.749 134.7 179.749H100.3C99.2 179.749 98.3 180.649 98.3 181.749V235.549C98.3 236.649 99.2 237.549 100.3 237.549Z"></path>
+					<path d="M162.1 237.549C172.7 237.549 181.3 228.949 181.3 218.349V181.749C181.3 180.649 180.4 179.749 179.3 179.749C178.2 179.749 177.3 180.649 177.3 181.749V218.449C177.3 226.849 170.5 233.649 162.1 233.649C153.7 233.649 146.9 226.849 146.9 218.449V181.749C146.9 180.649 146 179.749 144.9 179.749C143.8 179.749 142.9 180.649 142.9 181.749V218.449C142.9 228.949 151.5 237.549 162.1 237.549Z"></path>
+					<path d="M212.1 237.549H222.4C223.5 237.549 224.4 236.649 224.4 235.549C224.4 234.449 223.5 233.549 222.4 233.549H212.1C200.7 233.549 191.4 224.249 191.4 212.849V204.349C191.4 192.949 200.7 183.649 212.1 183.649H222.4C223.5 183.649 224.4 182.749 224.4 181.649C224.4 180.549 223.5 179.649 222.4 179.649H212.1C198.5 179.649 187.4 190.749 187.4 204.349V212.849C187.4 226.549 198.5 237.549 212.1 237.549Z"></path>
+					<path d="M233.9 237.549C235 237.549 235.9 236.649 235.9 235.549V210.649H266.3V235.549C266.3 236.649 267.2 237.549 268.3 237.549C269.4 237.549 270.3 236.649 270.3 235.549V181.749C270.3 180.649 269.4 179.749 268.3 179.749C267.2 179.749 266.3 180.649 266.3 181.749V206.649H235.9V181.749C235.9 180.649 235 179.749 233.9 179.749C232.8 179.749 231.9 180.649 231.9 181.749V235.549C231.9 236.649 232.8 237.549 233.9 237.549Z"></path>
+				</g>
+				<g id="fur">
+					<path d="M100.3 152.549C101.4 152.549 102.3 151.649 102.3 150.549V125.649H125.7C126.8 125.649 127.7 124.749 127.7 123.649C127.7 122.549 126.8 121.649 125.7 121.649H102.3V98.7488H134.7C135.8 98.7488 136.7 97.8488 136.7 96.7488C136.7 95.6488 135.8 94.7488 134.7 94.7488H100.3C99.2 94.7488 98.3 95.6488 98.3 96.7488V150.549C98.3 151.649 99.2 152.549 100.3 152.549Z"></path>
+					<path d="M177.2 96.6489V99.3489C177.2 100.449 178.1 101.349 179.2 101.349C180.3 101.349 181.2 100.449 181.2 99.3489V96.6489C181.2 95.5489 180.3 94.6489 179.2 94.6489C178.1 94.6489 177.2 95.5489 177.2 96.6489Z"></path>
+					<path d="M162.1 152.549C172.7 152.549 181.3 143.949 181.3 133.349V107.549C181.3 106.449 180.4 105.549 179.3 105.549C178.2 105.549 177.3 106.449 177.3 107.549V133.349C177.3 141.749 170.5 148.549 162.1 148.549C153.7 148.549 146.9 141.749 146.9 133.349V107.549C146.9 106.449 146 105.549 144.9 105.549C143.8 105.549 142.9 106.449 142.9 107.549V133.349C142.9 143.949 151.5 152.549 162.1 152.549Z"></path>
+					<path d="M144.9 101.349C146 101.349 146.9 100.449 146.9 99.3489V96.6489C146.9 95.5489 146 94.6489 144.9 94.6489C143.8 94.6489 142.9 95.5489 142.9 96.6489V99.3489C142.9 100.449 143.8 101.349 144.9 101.349Z"></path>
+					<path d="M189.4 152.549C190.5 152.549 191.4 151.649 191.4 150.549V126.349H197.4C197.5 126.449 197.5 126.549 197.6 126.649L223 152.049C223.4 152.449 223.9 152.649 224.4 152.649C224.9 152.649 225.4 152.449 225.8 152.049C226.6 151.249 226.6 150.049 225.8 149.249L203 126.449H210C218.7 126.449 225.8 119.349 225.8 110.649C225.8 101.949 218.7 94.8489 210 94.8489H189.4C188.3 94.8489 187.4 95.7489 187.4 96.8489V150.649C187.4 151.649 188.3 152.549 189.4 152.549ZM191.4 98.6489H210C216.5 98.6489 221.8 103.949 221.8 110.449C221.8 116.949 216.5 122.249 210 122.249H191.4V98.6489Z"></path>
+				</g>
+				<g id="geschenk">
+					<path d="M123 67.5489H134.7C135.8 67.5489 136.7 66.6489 136.7 65.5489V39.4489C136.7 38.3489 135.8 37.4489 134.7 37.4489H120.1C119 37.4489 118.1 38.3489 118.1 39.4489C118.1 40.5489 119 41.4489 120.1 41.4489H132.7V63.5489H123C111.6 63.5489 102.3 54.2489 102.3 42.8489V34.3489C102.3 22.9489 111.6 13.6489 123 13.6489H133.3C134.4 13.6489 135.3 12.7489 135.3 11.6489C135.3 10.5489 134.4 9.64893 133.3 9.64893H123C109.4 9.64893 98.3 20.7489 98.3 34.3489V42.8489C98.3 56.4489 109.4 67.5489 123 67.5489Z"></path>
+					<path d="M144.9 67.5489H178.1C179.2 67.5489 180.1 66.6489 180.1 65.5489C180.1 64.4489 179.2 63.5489 178.1 63.5489H146.9V40.5489H171.1C172.2 40.5489 173.1 39.6489 173.1 38.5489C173.1 37.4489 172.2 36.5489 171.1 36.5489H146.9V13.6489H178.1C179.2 13.6489 180.1 12.7489 180.1 11.6489C180.1 10.5489 179.2 9.64893 178.1 9.64893H144.9C143.8 9.64893 142.9 10.5489 142.9 11.6489V65.4489C142.9 66.6489 143.8 67.5489 144.9 67.5489Z"></path>
+					<path d="M205.6 39.3487C214.5 43.7487 222.9 47.9487 222.9 55.6487C222.9 57.0487 222.3 58.3487 221.2 59.5487C219 61.7487 214.8 63.2487 210.8 63.2487C210.7 63.2487 210.7 63.2487 210.6 63.2487C210.5 63.2487 201.1 63.9487 192.3 60.1487C191.3 59.7487 190.1 60.1487 189.7 61.1487C189.3 62.1487 189.7 63.3487 190.7 63.7487C197.7 66.7487 204.8 67.2487 208.4 67.2487C209.7 67.2487 210.5 67.1487 210.8 67.1487C215.9 67.1487 221.1 65.2487 224 62.2487C225.9 60.3487 226.9 57.9487 226.9 55.5487C226.8 45.3487 216.5 40.2487 207.3 35.6487C199.1 31.5487 191.3 27.7487 191.3 21.2487C191.3 16.6487 197.6 13.6487 203.5 13.6487C203.6 13.6487 203.6 13.6487 203.7 13.6487C203.8 13.6487 213.2 12.9487 222 16.7487C223 17.1487 224.2 16.7487 224.6 15.7487C225 14.7487 224.6 13.5487 223.6 13.1487C214.2 9.04871 204.5 9.64871 203.4 9.74871C195.5 9.74871 187.3 14.1487 187.3 21.3487C187.4 30.2487 196.6 34.8487 205.6 39.3487Z"></path>
+					<path d="M256.6 67.5489H266.9C268 67.5489 268.9 66.6489 268.9 65.5489C268.9 64.4489 268 63.5489 266.9 63.5489H256.6C245.2 63.5489 235.9 54.2489 235.9 42.8489V34.3489C235.9 22.9489 245.2 13.6489 256.6 13.6489H266.9C268 13.6489 268.9 12.7489 268.9 11.6489C268.9 10.5489 268 9.64893 266.9 9.64893H256.6C243 9.64893 231.9 20.7489 231.9 34.3489V42.8489C231.9 56.4489 243 67.5489 256.6 67.5489Z"></path>
+					<path d="M278.5 67.5489C279.6 67.5489 280.5 66.6489 280.5 65.5489V40.5489H310.9V65.4489C310.9 66.5489 311.8 67.4489 312.9 67.4489C314 67.4489 314.9 66.5489 314.9 65.4489V11.6489C314.9 10.5489 314 9.64893 312.9 9.64893C311.8 9.64893 310.9 10.5489 310.9 11.6489V36.5489H280.5V11.6489C280.5 10.5489 279.6 9.64893 278.5 9.64893C277.4 9.64893 276.5 10.5489 276.5 11.6489V65.4489C276.5 66.6489 277.4 67.5489 278.5 67.5489Z"></path>
+					<path d="M323 67.5489H356C357.1 67.5489 358 66.6489 358 65.5489C358 64.4489 357.1 63.5489 356 63.5489H325V40.5489H347.5C348.6 40.5489 349.5 39.6489 349.5 38.5489C349.5 37.4489 348.6 36.5489 347.5 36.5489H325V13.6489H356C357.1 13.6489 358 12.7489 358 11.6489C358 10.5489 357.1 9.64893 356 9.64893H323C321.9 9.64893 321 10.5489 321 11.6489V65.4489C321 66.6489 321.9 67.5489 323 67.5489Z"></path>
+					<path d="M367.6 67.5489C368.7 67.5489 369.6 66.6489 369.6 65.5489V18.5489L400.3 66.6489C400.7 67.2489 401.3 67.5489 402 67.5489C402.2 67.5489 402.4 67.5489 402.6 67.4489C403.5 67.2489 404 66.4489 404 65.5489V11.6489C404 10.5489 403.1 9.64888 402 9.64888C400.9 9.64888 400 10.5489 400 11.6489V58.6489L369.3 10.5489C368.8 9.74888 367.9 9.44888 367.1 9.74888C366.2 9.94888 365.7 10.7489 365.7 11.6489V65.4489C365.6 66.6489 366.5 67.5489 367.6 67.5489Z"></path>
+					<path d="M412.1 67.5489C413.2 67.5489 414.1 66.6489 414.1 65.5489V42.5489L444.1 67.0489C444.5 67.3489 444.9 67.5489 445.4 67.5489C446 67.5489 446.6 67.3489 446.9 66.8489C447.6 65.9489 447.5 64.7489 446.6 64.0489L415.6 38.6489L446.6 13.2489C447.5 12.5489 447.6 11.2489 446.9 10.4489C446.2 9.54893 444.9 9.44893 444.1 10.1489L414.1 34.6489V11.6489C414.1 10.5489 413.2 9.64893 412.1 9.64893C411 9.64893 410.1 10.5489 410.1 11.6489V65.4489C410.1 66.6489 411 67.5489 412.1 67.5489Z"></path>
+				</g>
+				<g id="line">
+					<path class="st0" d="M798.8,281.7H488l12.8-121l-20.4-2.5l5.6-69.4L588,103.4c3.1,0.4,6.3-0.1,9-1.7C651.5,71,662,35.6,644.9,26.9
+							c-18.8-9.6-54.3,34.2-57.6,62.4c-0.2,1.9,1,3.6,2.9,4l0,0c2.3,0.4,4.3-1.4,4.2-3.7c-1.4-30.4-30.6-69.4-45.6-58
+							c-23.7,18.1,34.9,75.6,34.9,75.6c-41.9,15.2-53.4,51.7-53.4,51.7s14.9-9.1,21.4-0.5c8.7,11.5,5.2,33.2,5.2,33.2
+							s16.7-60.3,34.3-76.6c0,0,6.9,44.2,32.2,67.1c0,0-2.4-12.5,8.9-17.1c9.4-3.8,24.8,6.6,24.8,6.6s-31.4-28.9-44.4-65l90.6,13.3
+							l-9.2,60.2l-24-2.6l-14.8,94H23.3"></path>
+				</g>
+			</svg>
+		</div>
+	</div>
 </html>

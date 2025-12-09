@@ -1,6 +1,7 @@
 import { g as getCart, a as gotoBlock, s as saveCart } from "./app.min.js";
 import "./autoheight.min.js";
 import { f as formValidate } from "./form.min.js";
+/* empty css           */
 const cart = getCart();
 if (!cart.length) {
   alert("Ваша корзина пуста! Добавьте товары перед оформлением заказа.");

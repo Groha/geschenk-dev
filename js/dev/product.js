@@ -1,5 +1,6 @@
 import { g as getCart, s as saveCart, u as updateCartCount } from "./app.min.js";
 import "./slider.min.js";
+/* empty css           */
 function addToCart() {
   document.addEventListener("click", addToCartAction);
   function addToCartAction(e) {

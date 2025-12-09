@@ -1,6 +1,8 @@
 import "./app.min.js";
+import "./article.min2.js";
 import "./slider.min.js";
 import "./form.min.js";
+/* empty css           */
 function formRating() {
   const ratings = document.querySelectorAll("[data-fls-rating]");
   if (ratings) {

@@ -531,6 +531,35 @@ function preloader() {
   }
 }
 document.addEventListener("DOMContentLoaded", preloader);
+document.addEventListener("DOMContentLoaded", () => {
+  const preloader2 = document.querySelector(".preloader");
+  const logo = document.querySelector(".preloader-logo");
+  const headerLogo = document.querySelector(".header__logo");
+  const html = document.documentElement;
+  const firstShow = !sessionStorage.getItem("preloaderShown");
+  if (firstShow) {
+    sessionStorage.setItem("preloaderShown", "true");
+    html.style.setProperty("--preloader-delay", "2s");
+    const path = document.querySelector("#line path");
+    const length = path.getTotalLength();
+    path.style.setProperty("--dash", length);
+    path.style.strokeDasharray = length;
+    path.style.strokeDashoffset = -length;
+    const totalAnimationTime = 2600 + 3200;
+    setTimeout(() => {
+      logo.classList.add("fly");
+      preloader2.classList.add("hidden");
+      setTimeout(() => {
+        headerLogo.classList.add("show");
+      }, 200);
+      html.style.setProperty("--preloader-delay", "0s");
+    }, totalAnimationTime);
+  } else {
+    preloader2.classList.add("hidden");
+    headerLogo.classList.add("show");
+    html.style.setProperty("--preloader-delay", "0s");
+  }
+});
 function setTheme(isDark) {
   const root = document.documentElement;
   if (isDark) {
