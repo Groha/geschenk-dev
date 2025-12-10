@@ -12,7 +12,7 @@
   height: 100%;
 }
 .article__image {
-  object-fit: 4/3;
+  aspect-ratio: 4/3;
   overflow: hidden;
 }
 .article__image img {

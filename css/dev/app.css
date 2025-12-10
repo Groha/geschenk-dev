@@ -484,6 +484,8 @@ body {
 }
 .footer__logo {
   width: 100%;
+  margin-inline: auto;
+  display: block;
 }
 .dark-theme .footer__logo {
   filter: invert(1);
@@ -583,9 +585,11 @@ body {
 }
 #line path {
   stroke-dasharray: var(--dash, 0);
-  stroke-dashoffset: var(--dash, 0);
+  stroke-dashoffset: calc(-1 * var(--dash, 0));
   animation: draw 4s ease forwards 2.4s;
-  transform-origin: left;
+}
+.webKit #line path {
+  stroke-dasharray: var(--dash, 0) var(--dash, 0);
 }
 
 @keyframes draw {
@@ -690,6 +694,9 @@ body {
   }
   .header__langlist {
     display: none;
+  }
+  .footer__logo {
+    max-width: 60%;
   }
   .footer__text {
     font-size: 0.875rem;
@@ -834,9 +841,6 @@ body {
   .header__container {
     justify-content: space-between;
     gap: 1.25rem;
-  }
-  .header__logo {
-    width: 100%;
   }
   .header__cart {
     font-size: 1.25rem;

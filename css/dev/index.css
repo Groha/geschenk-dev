@@ -87,10 +87,14 @@
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
+  order: -1;
+}
+.articles__title {
+  text-align: center;
 }
 .articles__button {
   justify-self: start;
-  align-self: self-start;
+  align-self: end;
 }
 
 .article__link {
@@ -104,6 +108,9 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
+}
+.article__footer {
+  margin-block-start: auto;
 }
 
 .body-article {
@@ -226,6 +233,11 @@
   padding-inline: 1rem;
   line-height: 1.2;
 }
+@media (max-width: 75em) {
+  .articles__container {
+    row-gap: 2.5rem;
+  }
+}
 @media (max-width: 62em) {
   .reviews__slider-button-next, .reviews__slider-button-prev {
     padding-inline: 1.125rem;
@@ -237,16 +249,6 @@
 @media (max-width: 61.99875em) {
   .reviews__container {
     padding-inline: 0;
-  }
-}
-@media (max-width: 48em) {
-  .articles__container {
-    row-gap: 2.5rem;
-  }
-}
-@media (max-width: 47.99875em) {
-  .articles__main {
-    order: -1;
   }
 }
 @media (max-width: 20em) {
@@ -281,6 +283,11 @@
     font-size: 1.125rem;
   }
 }
+@media (min-width: 1430) {
+  .articles__title {
+    text-align: left;
+  }
+}
 @media (min-width: 20em) and (max-width: 89.375em) {
   .hero {
     padding-block: clamp( 2.5rem , -0.38288288288125rem  +  14.4144144144vw , 12.5rem );
@@ -313,37 +320,22 @@
     font-size: clamp( 1.125rem , 1.0889639639625rem  +  0.1801801802vw , 1.25rem );
   }
 }
-@media (min-width: 29.99875em) {
-  .article__links {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  .article__right .article__link {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  .article__right .article__link .article__text {
-    order: 1;
-  }
-  .article__right .article__link .article__image {
-    order: 2;
-  }
-}
 @media (min-width: 47.99875em) {
   .articles__container {
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     column-gap: 2.5rem;
   }
   .articles__main {
-    grid-column: span 3/span 3;
+    grid-column: 1/-1;
   }
   .article__links {
     grid-column: span 2/span 2;
-    grid-row: span 2/span 2;
   }
   .article__links .article__description {
     -webkit-line-clamp: 4;
   }
   .article__right {
-    grid-column: span 3/span 3;
+    grid-column: span 2/span 2;
   }
   .article__right .article__description {
     -webkit-line-clamp: 3;
@@ -359,9 +351,6 @@
   }
 }
 @media (min-width: 48em) and (max-width: 87.5em) {
-  .articles__container {
-    row-gap: clamp( 2.5rem , -3.5759493670875rem  +  12.6582278481vw , 7.5rem );
-  }
   .faq__container {
     column-gap: clamp( 2.5rem , -3.5759493670875rem  +  12.6582278481vw , 7.5rem );
   }
@@ -387,6 +376,39 @@
   }
   .reviews__slider-button-next, .reviews__slider-button-prev {
     padding-block: clamp( 0.5625rem , 0.10661764705625rem  +  0.7352941176vw , 0.75rem );
+  }
+}
+@media (width >= 68.75rem) {
+  .articles__container {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+  .articles__main {
+    grid-column: span 3/span 3;
+    order: unset;
+  }
+  .articles__button {
+    align-self: start;
+  }
+  .article__links {
+    grid-row: span 2/span 2;
+  }
+  .article__right {
+    grid-column: span 3/span 3;
+  }
+  .article__right .article__link {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .article__right .article__link .article__text {
+    order: 1;
+  }
+  .article__right .article__link .article__image {
+    order: 2;
+    height: 100%;
+  }
+}
+@media (min-width: 75em) and (max-width: 87.5em) {
+  .articles__container {
+    row-gap: clamp( 2.5rem , -27.5rem  +  40vw , 7.5rem );
   }
 }
 @media (min-width: 87.5em) {

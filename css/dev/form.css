@@ -16,8 +16,8 @@
   margin-block-end: 0.625rem;
 }
 .form__input {
-  background-color: var(--second-color);
-  color: var(--main-color);
+  background-color: #fbfbfb;
+  color: #040404;
   border-radius: 0.5625rem;
   padding: 0.75rem 0.5rem;
 }
@@ -37,6 +37,9 @@
   position: relative;
   margin-block-end: 0.625rem;
 }
+.form-field textarea {
+  resize: vertical;
+}
 .form-field input, .form-field textarea {
   border-radius: 0.5rem;
   /* если инпут в фокусе или не пустой */
@@ -49,8 +52,15 @@
   color: var(--second-color);
   font-weight: 500;
 }
-.form-field textarea {
-  resize: vertical;
+.form-field.focused label {
+  top: -0.625rem;
+  left: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--second-color);
+  font-weight: 500;
+}
+.form-field.focused:has([type=tel]) label {
+  left: 0.5rem;
 }
 .form-field label {
   position: absolute;
@@ -61,7 +71,10 @@
   pointer-events: none;
   transition: all 0.2s ease;
   background: transparent;
-  color: var(--main-color);
+  color: #040404;
+}
+.form-field:has([type=tel]) label {
+  left: 2.8125rem;
 }
 .form-field [data-fls-form-error] {
   position: absolute;
@@ -69,6 +82,18 @@
   left: 0.5rem;
   font-size: 0.625rem;
   color: red;
+}
+.form-field .iti {
+  width: 100%;
+}
+
+.form-address {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+.form-address .form-field:last-child {
+  grid-column: 1/-1;
 }
 @media (max-width: 20em){
   .form {
