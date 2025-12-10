@@ -1,6 +1,7 @@
 import "./app.min.js";
 import "./article.min2.js";
 import "./slider.min.js";
+import "./autoheight.min.js";
 import "./form.min.js";
 /* empty css           */
 function formRating() {

@@ -536,6 +536,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const logo = document.querySelector(".preloader-logo");
   const headerLogo = document.querySelector(".header__logo");
   const html = document.documentElement;
+  const isWebKit = /AppleWebKit/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent);
   const firstShow = !sessionStorage.getItem("preloaderShown");
   if (firstShow) {
     sessionStorage.setItem("preloaderShown", "true");
@@ -543,8 +544,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const path = document.querySelector("#line path");
     const length = path.getTotalLength();
     path.style.setProperty("--dash", length);
-    path.style.strokeDasharray = length;
-    path.style.strokeDashoffset = -length;
+    isWebKit ? preloader2.classList.add("webKit") : null;
     const totalAnimationTime = 2600 + 3200;
     setTimeout(() => {
       logo.classList.add("fly");

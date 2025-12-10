@@ -28,6 +28,26 @@ let formValidate = {
       this.addError(formRequiredItem);
       this.removeSuccess(formRequiredItem);
       error++;
+    } else if (formRequiredItem.id === "phone") {
+      formRequiredItem.value = formRequiredItem.value.replace(/[^\d\s\-()+]/g, "");
+      if (!formRequiredItem.value.trim() || !/^[\d\s\-()+]{3,14}$/.test(formRequiredItem.value)) {
+        this.addError(formRequiredItem);
+        this.removeSuccess(formRequiredItem);
+        error++;
+      } else {
+        this.removeError(formRequiredItem);
+        this.addSuccess(formRequiredItem);
+      }
+    } else if (formRequiredItem.id === "zip") {
+      formRequiredItem.value = formRequiredItem.value.replace(/[^\d]/g, "");
+      if (!/^\d{5}$/.test(formRequiredItem.value)) {
+        this.addError(formRequiredItem);
+        this.removeSuccess(formRequiredItem);
+        error++;
+      } else {
+        this.removeError(formRequiredItem);
+        this.addSuccess(formRequiredItem);
+      }
     } else {
       if (!formRequiredItem.value.trim()) {
         this.addError(formRequiredItem);

@@ -20,7 +20,7 @@ function closeFilters() {
 }
 async function loadProducts() {
   try {
-    const res = await fetch("/files/products.json");
+    const res = await fetch("https://groha.github.io/geschenk-dev/files/products.json");
     if (!res.ok) throw new Error("Ошибка загрузки товаров");
     allProducts = await res.json();
     filteredProducts = allProducts;

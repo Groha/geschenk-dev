@@ -9,7 +9,7 @@ function renderCart() {
   if (!cart.length) {
     summary.innerHTML = `
       <p style="text-align:center">Ваша корзина пуста.</p>
-      <a href="https://groha.github.io/geschenk-dev/products" data-fls-button class="summary__button button">Перейти к товарам</a>
+      <a href="/products.html" data-fls-button class="summary__button button">Перейти к товарам</a>
     `;
     return;
   }
