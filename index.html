@@ -96,7 +96,7 @@
 				<section class="hero">
 					<div class="hero__container">
 						<h1 class="hero__title title">Geschenk für euch</h1>
-						<p class="hero__description">Ein Geschenk, in dem alles echt ist</p>
+						<p class="hero__description">Freude verschenken. Genuss erleben.</p>
 						<a href="#" data-fls-button="" class="hero__button button">Выбрать подарок</a>
 					</div>
 					<picture>
@@ -473,16 +473,16 @@
 						<form data-fls-form="ajax" data-fls-form-popup="popup" method="POST" action="/sendmail" class="faq__form form">
 							<h5 class="form__title">Залишились питання?</h5>
 							<div class="form-field">
-								<input type="text" name="form[name]" required placeholder="" data-fls-form-errtext="Error" class="form__input input">
-								<label>Имя</label>
+								<input type="text" name="form[name]" required placeholder="" data-fls-form-errtext="Bitte geben Sie Ihren Namen ein" class="form__input input">
+								<label>Name</label>
 							</div>
 							<div class="form-field">
-								<input type="tel" name="form[phone]" required placeholder="" data-fls-form-errtext="Error" class="form__input input">
-								<label>Телефон</label>
-							</div>
-							<div class="form-field">
-								<input type="email" name="form[email]" required placeholder="" data-fls-form-errtext="Error" class="form__input input">
+								<input type="email" name="form[email]" required placeholder="" data-fls-form-errtext="Bitte geben Sie eine gültige E-Mail-Adresse ein" class="form__input input">
 								<label>E-mail</label>
+							</div>
+							<div class="form-field">
+								<textarea data-fls-input-autoheight="" name="form[message]" required placeholder="" data-fls-form-errtext="Bitte geben Sie eine Nachricht ein" class="form__input input"></textarea>
+								<label class="form__label">Nachricht</label>
 							</div>
 							<div class="form__footer">
 								<button data-fls-button="" type="submit" class="form__button button">Напишiть менi!</button>
